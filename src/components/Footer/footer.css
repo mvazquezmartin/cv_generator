@@ -1,0 +1,28 @@
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 1rem;
+  background: #666;
+  height: 30dvh;
+  color: #e1e1e1;
+
+  p{
+    font-weight: 600;
+    a{
+      transition: color 0.3s ease;
+      &:hover{
+        color: #cb67e4;
+      }
+    }
+  }
+
+  .github-container{
+    height: 30px;
+    width: 30px;
+    svg{
+      color: #e1e1e1;
+    }
+  }
+}

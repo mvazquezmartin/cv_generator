@@ -1,0 +1,45 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1280px;
+    width: 100%;
+    .home-title {
+      h1 {
+        font-size: clamp(1.5rem, 3vw + 1rem, 3.75rem);
+        line-height: 1;
+        text-align: center;
+      }
+      h2 {
+        text-align: center;
+      }
+    }
+
+    .home-action-btn {
+      .btn-start {
+        background-color: #cb67e4; /* Color de fondo */
+        color: white; /* Color del texto */
+        border: none; /* Sin borde */
+        border-radius: 4px; /* Bordes redondeados */
+        padding: 10px 20px; /* Espaciado interno */
+        font-size: 16px; /* Tamaño de fuente */
+        cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #a649c9;
+        }
+
+        &:active {
+          background-color: #944baf;
+        }
+      }
+    }
+  }
+}
