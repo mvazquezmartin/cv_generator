@@ -5,10 +5,14 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 const resources = {
   en: {
     translation: {
+      header: { btnDownload: 'Download' },
       home: {
-        title: 'The Simplest Way to Build a Professional CV',
+        title: {
+          first: 'The simplest way to build a',
+          second: 'Professional CV',
+        },
         description:
-          'Quickly build a tailored CV with our easy-to-use editing features, inspired by the Harvard College Bullet Point Resume Template.',
+          'Quickly build a customizable CV with our easy-to-use editing features, inspired by the Harvard College Bullet Point Resume Template.',
         button: 'Get Started',
       },
       footer: {
@@ -19,8 +23,12 @@ const resources = {
 
   es: {
     translation: {
+      header: { btnDownload: 'Descargar' },
       home: {
-        title: 'La manera más fácil de construir un CV profesional',
+        title: {
+          first: 'La manera más fácil de construir un',
+          second: 'CV profesional',
+        },
         description:
           'Construye rápidamente un CV a medida con nuestras funciones de edición fáciles de usar, inspiradas en la plantilla Harvard College Bullet Point Resume.',
         button: 'Empieza ahora',
