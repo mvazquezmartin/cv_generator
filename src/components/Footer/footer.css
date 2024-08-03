@@ -4,24 +4,24 @@ footer {
   justify-content: center;
   align-items: center;
   row-gap: 1rem;
-  background: #666;
+  background: #262626;
   height: 30dvh;
   color: #e1e1e1;
 
-  p{
+  p {
     font-weight: 600;
-    a{
+    a {
       transition: color 0.3s ease;
-      &:hover{
+      &:hover {
         color: #cb67e4;
       }
     }
   }
 
-  .github-container{
+  .github-container {
     height: 30px;
     width: 30px;
-    svg{
+    svg {
       color: #e1e1e1;
     }
   }

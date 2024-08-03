@@ -4,12 +4,51 @@ header {
   align-items: center;
   justify-content: center;
   height: 5rem;
-  background: #999;
+  background: #262626;
+  padding: 0 4rem;
+  color: #e1e1e1;
 
   .header-flex {
     display: flex;
     justify-content: space-between;
     max-width: 1280px;
     width: 100%;
+  }
+
+  .language-download {
+    .btn-download {
+      background-color: #cb67e4;
+      color: #e1e1e1;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      padding: 0.5rem 1rem;
+      font-size: 14px;
+      line-height: 1.75rem;
+      font-weight: 500;
+      height: 50px;
+      width: 135px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      font-weight: 700;
+      box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1);
+
+      &:hover {
+        background-color: #a649c9;
+      }
+
+      &:active {
+        background-color: #944baf;
+      }
+
+      svg {
+        width: 20px;
+        height: 20px;
+        stroke-width: 3;
+        color: inherit;
+      }
+    }
   }
 }
