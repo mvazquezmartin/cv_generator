@@ -23,7 +23,7 @@
     position: absolute;
     top: 100%;
     left: 0;
-    background: #444;
+    background: #555;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     z-index: 1000;
     border-bottom-right-radius: 5px;
@@ -43,6 +43,9 @@
       width: max-content;
       text-align: left;
       color: #e1e1e1;
+      &:hover{
+        color: #aaa;
+      }
     }
 
     & button svg {

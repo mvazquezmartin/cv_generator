@@ -17,11 +17,12 @@ body {
   min-height: 100dvh;
   margin: 0 auto;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: radial-gradient(
+  /* background: radial-gradient(
     ellipse farthest-corner at 60% 60%,
     rgba(0, 0, 0, 0) 0%,
     rgba(0, 0, 0, 0.5)
-  );
+  ); */
+  background: #eee;
 }
 
 input,
