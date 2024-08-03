@@ -1,31 +1,18 @@
 const SVG_downloadIcon = () => {
   return (
-    <svg width="64px" height="64px" viewBox="0 0 24 24" fill="none">
-      <g id="SVGRepo_bgCarrier" strokeWidth="0" />
-
-      <g
-        id="SVGRepo_tracerCarrier"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-
-      <g id="SVGRepo_iconCarrier">
-        {' '}
-        <path
-          d="M3 15C3 17.8284 3 19.2426 3.87868 20.1213C4.75736 21 6.17157 21 9 21H15C17.8284 21 19.2426 21 20.1213 20.1213C21 19.2426 21 17.8284 21 15"
-          stroke="#1C274C"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />{' '}
-        <path
-          d="M12 3V16M12 16L16 11.625M12 16L8 11.625"
-          stroke="#1C274C"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />{' '}
-      </g>
+    <svg
+      width="24"
+      height="24"
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      data-icon="SvgDownload"
+      aria-hidden="true"
+    >
+      <path d="M7.8 11.5l2.1 2.3 2.1 2.3V3m0 13.1l2.1-2.3 2.1-2.3m4.8 3.6V19a2 2 0 01-2 2H5a2.006 2.006 0 01-2-2v-3.9"></path>
     </svg>
   );
 };
@@ -35,7 +22,7 @@ const SVG_ArgentinaFlag = () => {
     <svg
       width="64px"
       height="64px"
-      viewBox="0 0 36 36"      
+      viewBox="0 0 36 36"
       aria-hidden="true"
       role="img"
       preserveAspectRatio="xMidYMid meet"
@@ -93,7 +80,7 @@ const SVG_USAFlag = () => {
     <svg
       width="64px"
       height="64px"
-      viewBox="0 0 36 36"      
+      viewBox="0 0 36 36"
       aria-hidden="true"
       role="img"
       preserveAspectRatio="xMidYMid meet"
@@ -147,4 +134,49 @@ const SVG_githubIcon = () => {
   );
 };
 
-export { SVG_downloadIcon, SVG_ArgentinaFlag, SVG_USAFlag, SVG_githubIcon };
+const SVG_moveIcon = () => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      data-icon="SvgMove"
+      aria-hidden="true"
+    >
+      <path d="M12 21V3M9 6l3-3 3 3m0 12l-3 3-3-3m-6-6h18M6 15l-3-3 3-3m12 0l3 3-3 3"></path>
+    </svg>
+  );
+};
+
+const SVG_delete = () => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      data-icon="SvgXOctogon"
+      aria-hidden="true"
+    >
+      <path d="M12 12l1.678 1.679 1.679 1.679m-6.715 0l1.679-1.679L12 12m0 0l-1.679-1.678-1.683-1.675m6.715 0l-1.679 1.679L12 12m3.723-8.983H8.281l-5.26 5.26v7.438l5.26 5.26h7.438l5.26-5.26V8.281z"></path>
+    </svg>
+  );
+};
+
+export {
+  SVG_downloadIcon,
+  SVG_ArgentinaFlag,
+  SVG_USAFlag,
+  SVG_githubIcon,
+  SVG_moveIcon,
+  SVG_delete,
+};
