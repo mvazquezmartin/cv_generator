@@ -9,14 +9,24 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
+  },
   "dependencies": {
+    "@hello-pangea/dnd": "^16.6.0",
     "@react-pdf/renderer": "^3.4.4",
     "i18next": "^23.12.2",
     "i18next-browser-languagedetector": "^8.0.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^15.0.0",
-    "react-router-dom": "^6.25.1"
+    "react-router-dom": "^6.25.1",
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.3.3",
