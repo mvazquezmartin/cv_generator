@@ -1,9 +1,23 @@
-import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import {
+  Document,
+  Page,
+  Text,
+  View,
+  StyleSheet,
+  Link,
+  Font,
+} from '@react-pdf/renderer';
+
+Font.register({
+  family: 'STIX Two Text',
+  src: '/fonts/STIX_Two_Text/STIXTwoText-VariableFont_wght.ttf',
+});
 
 const styles = StyleSheet.create({
   page: {
     flexDirection: 'column',
     padding: 10,
+    fontFamily: 'STIX Two Text',
   },
   title: { fontSize: '20', fontWeight: '700', textAlign: 'center' },
   section: {
@@ -28,7 +42,11 @@ export const PDFDocument = ({
         <Text>{name}</Text>
       </View>
       <View style={styles.section}>
-        <Text>{contact}</Text>
+        <Text>{contact.location}</Text>
+        <Link src={contact.linkedin}>{contact.linkedin}</Link>
+        <Link src={contact.portfolio}>{contact.portfolio}</Link>
+        <Text>{contact.phone}</Text>
+        <Text>{contact.email}</Text>
       </View>
       <View style={styles.divider}></View>
       <View>

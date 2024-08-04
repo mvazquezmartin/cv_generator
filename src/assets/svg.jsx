@@ -172,6 +172,26 @@ const SVG_delete = () => {
   );
 };
 
+const SVG_arrowBack = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      data-icon="SvgArrowLeft"
+      aria-hidden="true"
+    >
+      <path d="M21 12H3m6.427-6.427L3 12l6.427 6.427"></path>
+    </svg>
+  );
+};
+
 export {
   SVG_downloadIcon,
   SVG_ArgentinaFlag,
@@ -179,4 +199,5 @@ export {
   SVG_githubIcon,
   SVG_moveIcon,
   SVG_delete,
+  SVG_arrowBack,
 };
