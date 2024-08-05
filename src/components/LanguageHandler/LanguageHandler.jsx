@@ -1,12 +1,16 @@
 import { useTranslation } from 'react-i18next';
 import { SVG_USAFlag, SVG_ArgentinaFlag } from '@/assets/svg';
 import './language.css';
+import { useContext } from 'react';
+import { CVContext } from '@/context/CVContext';
 
 export const LanguageHandler = () => {
   const { i18n } = useTranslation();
+  const { resetCvData } = useContext(CVContext);
 
   const changeLanguage = (lgn) => {
     i18n.changeLanguage(lgn);
+    resetCvData();
   };
 
   return (
