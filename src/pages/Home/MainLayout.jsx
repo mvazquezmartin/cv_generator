@@ -2,6 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Footer } from '@/components/Footer/Footer';
 import { Header } from '@/components/Header/Header';
 import { useNavigate } from 'react-router-dom';
+import screenshot from '/Screenshot.png';
 import './mainLayout.css';
 
 export const MainLayout = () => {
@@ -29,6 +30,9 @@ export const MainLayout = () => {
             <button className="btn-start" onClick={handleNavigate}>
               {t('home.button')}
             </button>
+          </div>
+          <div className="screenshot-container">
+            <img src={screenshot} alt="screenshot from website" />
           </div>
         </main>
       </div>
