@@ -1,0 +1,28 @@
+<svg width="46" height="46" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 46 46">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#cb67e4" stop-opacity="1" />
+      <stop offset="100%" stop-color="#8b5cf6" stop-opacity="1" />
+    </linearGradient>
+  </defs>
+  <rect
+    x="2"
+    y="2"
+    width="42"
+    height="42"
+    rx="8"
+    ry="8"
+    fill="url(#grad1)"
+  />
+  <text
+    x="50%"
+    y="50%"
+    dominant-baseline="middle"
+    text-anchor="middle"
+    font-size="26"
+    fill="white"
+    font-family="Arial"
+  >
+    CV
+  </text>
+</svg>
