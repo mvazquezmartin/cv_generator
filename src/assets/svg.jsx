@@ -192,6 +192,43 @@ const SVG_arrowBack = () => {
   );
 };
 
+const SVG_preview = () => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      data-icon="SvgEye"
+      aria-hidden="true"
+    >
+      <path d="M12 9.5a2.5 2.5 0 11-1.768.732A2.5 2.5 0 0112 9.5zm0-3.9a9.078 9.078 0 017.05 3.2A10.727 10.727 0 0121 12a10.727 10.727 0 01-1.95 3.2A9.078 9.078 0 0112 18.4a9.078 9.078 0 01-7.05-3.2A10.727 10.727 0 013 12a10.727 10.727 0 011.95-3.2A9.078 9.078 0 0112 5.6z"></path>
+    </svg>
+  );
+};
+
+const SVG_plus = () => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      data-icon="SvgPlus"
+      aria-hidden="true"
+    >
+      <path d="M12 4v16m8-8H4"></path>
+    </svg>
+  );
+};
 export {
   SVG_downloadIcon,
   SVG_ArgentinaFlag,
@@ -200,4 +237,6 @@ export {
   SVG_moveIcon,
   SVG_delete,
   SVG_arrowBack,
+  SVG_preview,
+  SVG_plus,
 };
