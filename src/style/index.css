@@ -13,6 +13,25 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'STIX Two Text';
+  src: '/fonts/STIX_Two_Text/STIXTwoText-VariableFont_wght.ttf';
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  src: '/fonts/STIX_Two_Text/STIXTwoText-Italic-VariableFont_wght.ttf';
+  font-weight: normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'STIX Two Text';
+  src: '/fonts/STIX_Two_Text/static/STIXTwoText-Bold.ttf';
+  font-weight: bold;
+  font-style: normal;
+}
+
 body {
   min-height: 100dvh;
   margin: 0 auto;
