@@ -3,6 +3,8 @@
   justify-content: center;
   align-items: center;
   font-family: 'STIX Two Text';
+  /* background: #e1e1e1; */
+  padding-top: 5rem;
 
   .cv-builder {
     display: flex;
@@ -11,6 +13,7 @@
     margin: 2rem 0;
     border: 1px solid #666;
     padding: 10px;
+    background: #eee;
 
     .divider-line {
       border-bottom: 1px solid #666;
@@ -29,11 +32,16 @@
       font-weight: bold;
       font-size: 32px;
       text-align: center;
+      border: 1px dashed #cb67e4;
+      background: #e1e1e1;
 
       & div:nth-child(2) {
         font-size: 16px;
         font-weight: normal;
         color: #666;
+        border: 1px dashed #cb67e4;
+        background: #e1e1e1;
+        margin-bottom: 3px;
       }
     }
 
@@ -44,10 +52,20 @@
       font-size: 14px;
       margin-top: 7px;
       column-gap: 5px;
+      row-gap: 3px;
+      div {
+        span {
+          border: 1px dashed #cb67e4;
+          background: #e1e1e1;
+        }
+      }
     }
     .description-container {
       font-style: italic;
+      margin-top: 5px;
       padding: 5px;
+      border: 1px dashed #cb67e4;
+      background: #e1e1e1;
     }
 
     .experiences-container,
@@ -56,21 +74,24 @@
       display: flex;
       flex-direction: column;
       .experience-dnd,
-      .education-dnd, .skills-dnd {
+      .education-dnd,
+      .skills-dnd {
         display: flex;
         flex-direction: column;
         row-gap: 1rem;
 
         .experience-card,
-        .education-card, .skill-card {
+        .education-card,
+        .skill-card {
           display: flex;
           flex-direction: column;
-          border: 1px dashed #666;
+          border: 1px dashed #cb67e4;
           background: #e1e1e1;
           position: relative;
           padding: 0 10px;
 
           .btn-move {
+            opacity: 0.2;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -90,13 +111,15 @@
             font-weight: 500;
             cursor: grab;
             box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, opacity 0.3s ease;
 
             &:hover {
+              opacity: 1;
               background-color: #a649c9;
             }
 
             &:active {
+              opacity: 1;
               background-color: #944baf;
             }
           }
@@ -115,11 +138,26 @@
             }
           }
           .experience-task {
-            padding-left: 1rem;
-            padding-top: 5px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 7px;
+            padding-left: 2rem;
+            padding-top: 10px;
+
+            .editable-field-container {
+              display: list-item;
+              list-style-type: none;
+              padding-left: 1.5em; /* Ajusta este valor según la longitud del guion */
+              text-indent: -1.5em;
+            }
+            .editable-field-span::before {
+              content: ' ';
+              padding-right: 0.5em; /* Espacio entre el guion y el texto */
+            }
           }
         }
         .btn-delete {
+          opacity: 0.2;
           align-self: end;
           display: flex;
           justify-content: center;
@@ -137,9 +175,10 @@
           font-weight: 500;
           cursor: pointer;
           box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1);
-          transition: background-color 0.3s ease;
+          transition: background-color 0.3s ease, opacity 0.3s ease;
 
           &:hover {
+            opacity: 1;
             background-color: #c0392b;
           }
 

@@ -1,7 +1,7 @@
-import { useContext } from 'react';
+import { Fragment, useContext } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import { useTranslation } from 'react-i18next';
+import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import { CVContext } from '@/context/CVContext';
 import { Header } from '@/components/Header/Header';
 import { EditableField } from '@/pages/CreateCV/EditableField';
@@ -10,6 +10,7 @@ import './CVBuilder.css';
 
 export const CVBuilder = () => {
   const { cvData, setCvData } = useContext(CVContext);
+  const { t } = useTranslation();
 
   const onDragEnd = (result) => {
     if (!result.destination) return;
@@ -44,12 +45,12 @@ export const CVBuilder = () => {
         ...prevData.experiences,
         {
           id: uuidv4(),
-          company: 'Empresa',
-          location: 'Localidad',
-          position: 'Puesto',
-          startDate: 'Fecha de inicio',
-          endDate: 'Fecha final',
-          tasks: ['- función 1', '- función 2'],
+          company: t('cv_builder.defaultCompany'),
+          location: t('cv_builder.defaultLocation'),
+          position: t('cv_builder.defaultPosition'),
+          startDate: t('cv_builder.defaultStartDate'),
+          endDate: t('cv_builder.defaultEndDate'),
+          tasks: [t('cv_builder.defaultTask1'), t('cv_builder.defaultTask2')],
         },
       ],
     }));
@@ -95,10 +96,10 @@ export const CVBuilder = () => {
         ...prevData.education,
         {
           id: uuidv4(),
-          institution: 'Nueva Institución',
-          location: 'Nueva Ubicación',
-          title: 'Nuevo Título',
-          date: 'Nueva Fecha',
+          institution: t('cv_builder.defaultInstitution'),
+          location: t('cv_builder.defaultEducationLocation'),
+          title: t('cv_builder.defaultTitle'),
+          date: t('cv_builder.defaultDate'),
         },
       ],
     }));
@@ -127,7 +128,7 @@ export const CVBuilder = () => {
   const addSkill = () => {
     setCvData((prevData) => ({
       ...prevData,
-      skills: [...prevData.skills, '- Nueva habilidad'],
+      skills: [...prevData.skills, t('cv_builder.defaultSkill')],
     }));
   };
 
@@ -137,8 +138,6 @@ export const CVBuilder = () => {
       skills: prevData.skills.filter((_, skillIndex) => skillIndex !== index),
     }));
   };
-
-  const { t } = useTranslation();
 
   return (
     <>
@@ -150,6 +149,7 @@ export const CVBuilder = () => {
         experiences={cvData.experiences}
         education={cvData.education}
         skills={cvData.skills}
+        fixed={true}
       />
       <div className="cv-builder-container">
         <div className="cv-builder">
@@ -167,37 +167,26 @@ export const CVBuilder = () => {
               }
             />
           </div>
+
           <div className="contact-container">
-            <EditableField
-              value={cvData.contact.location}
-              onChange={(value) => handleContactChange('location', value)}
-            />
-            ·
-            <EditableField
-              value={cvData.contact.linkedin}
-              onChange={(value) => handleContactChange('linkedin', value)}
-            />
-            ·
-            <EditableField
-              value={cvData.contact.portfolio}
-              onChange={(value) => handleContactChange('portfolio', value)}
-            />
-            ·
-            <EditableField
-              value={cvData.contact.phone}
-              onChange={(value) => handleContactChange('phone', value)}
-            />
-            ·
-            <EditableField
-              value={cvData.contact.email}
-              onChange={(value) => handleContactChange('email', value)}
-            />
+            {Object.keys(cvData.contact).map((key, index) => (
+              <Fragment key={key}>
+                <EditableField
+                  value={cvData.contact[key]}
+                  onChange={(value) => handleContactChange(key, value)}
+                  className="contact"
+                />
+                {index < Object.keys(cvData.contact).length - 1 && '·'}
+              </Fragment>
+            ))}
           </div>
           <div className="divider-line"></div>
           <div className="description-container">
             <EditableField
               value={cvData.description}
-              onChange={(value) => handleContactChange('description', value)}
+              onChange={(description) =>
+                setCvData((prevData) => ({ ...prevData, description }))
+              }
             />
           </div>
           <div className="experiences-container">
