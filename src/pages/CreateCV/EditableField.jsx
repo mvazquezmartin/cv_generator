@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+import { SVG_delete } from '@/assets/svg';
 import './EditableField.css';
-import { SVG_delete } from '@/assets/svg'; // Asegúrate de importar el ícono
 
 export const EditableField = ({ value, onChange, onEnter }) => {
   const [editing, setEditing] = useState(false);
@@ -19,7 +19,6 @@ export const EditableField = ({ value, onChange, onEnter }) => {
 
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
-      // Permitir Shift+Enter para nuevos saltos de línea
       setEditing(false);
       if (onEnter) {
         onEnter();
