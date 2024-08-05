@@ -8,7 +8,7 @@ export const Footer = () => {
     <footer>
       <div className="bg-absolute"></div>
       <div></div>
-      <div className='footerby'>
+      <div className="footerby">
         <p>
           {t('footer.by')}
           <a href="https://github.com/mvazquezmartin" target="_blank">
@@ -16,7 +16,9 @@ export const Footer = () => {
           </a>
         </p>
         <div className="github-container">
-          <SVG_githubIcon />
+          <a href="https://github.com/mvazquezmartin/cv_generator" target='_blank'>
+            <SVG_githubIcon />
+          </a>
         </div>
       </div>
     </footer>

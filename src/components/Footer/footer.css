@@ -37,8 +37,13 @@ footer {
     .github-container {
       height: 30px;
       width: 30px;
+      cursor: pointer;
       svg {
         color: #e1e1e1;
+        transition: color 0.3s ease;
+        &:hover {
+          color: #cb67e4;
+        }
       }
     }
   }
