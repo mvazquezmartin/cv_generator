@@ -30,11 +30,12 @@ const styles = StyleSheet.create({
     padding: 10,
     fontFamily: 'STIX Two Text',
   },
-  title: { fontSize: 24, fontWeight: '700', textAlign: 'center' },
+  title: { fontSize: 24, fontWeight: 700, textAlign: 'center' },
   subTitle: {
-    fontSize: '12',
+    fontSize: 12,
     fontWeight: 'bold',
-    marginVertical: '15',
+    marginTop: 15,
+    marginBottom: 5,
     borderBottom: '1px solid #aaa',
   },
   position: {
@@ -43,7 +44,12 @@ const styles = StyleSheet.create({
     padding: '0 5',
     color: '#666',
   },
-  contact: { fontSize: 11, textAlign: 'center', marginTop: '7' },
+  contact: {
+    fontSize: 11,
+    textAlign: 'center',
+    marginVertical: '7',
+    borderBottom: '1px solid #aaa',
+  },
   description: {
     fontSize: 10.5,
     fontFamily: 'STIX Two Text',
@@ -52,10 +58,6 @@ const styles = StyleSheet.create({
   },
   section: {
     marginBottom: 10,
-  },
-  divider: {
-    borderBottom: '1px solid #aaa',
-    marginVertical: 5,
   },
   experience: {
     fontSize: 12,
@@ -67,7 +69,7 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     fontSize: 11,
     fontWeight: 'bold',
-    marginTop: 10,
+    marginTop: 5,
   },
   titleDate: {
     display: 'flex',
@@ -79,8 +81,16 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
   },
   tasks: {
-    marginLeft: 10,
+    // marginLeft: 10,
     fontSize: 10.5,
+    display: 'list-item',
+    listStyleType: 'none',
+    paddingLeft: 15,
+    // textIndent: '-20',
+  },
+  task: {
+    paddingRight: 8,
+    marginVertical: 2,
   },
 });
 
@@ -95,6 +105,13 @@ export const PDFDocument = ({
 }) => {
   const { t } = useTranslation();
 
+  const formatUrl = (url) => {
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+      return `https://${url}`;
+    }
+    return url;
+  };
+
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -105,12 +122,11 @@ export const PDFDocument = ({
         <View style={styles.contact}>
           <Text>
             {contact.location} ·{' '}
-            <Link src={contact.linkedin}>{contact.linkedin}</Link> ·{' '}
-            <Link src={contact.portfolio}>{contact.portfolio}</Link> ·{' '}
-            {contact.phone} · {contact.email}
+            <Link src={formatUrl(contact.linkedin)}>{contact.linkedin}</Link> ·{' '}
+            <Link src={formatUrl(contact.portfolio)}>{contact.portfolio}</Link>{' '}
+            · {contact.phone} · {contact.email}
           </Text>
         </View>
-        <View style={styles.divider}></View>
         <View style={styles.description}>
           <Text>{description}</Text>
         </View>
@@ -130,7 +146,9 @@ export const PDFDocument = ({
               </View>
               <View style={styles.tasks}>
                 {exp.tasks.map((task, taskIndex) => (
-                  <Text key={taskIndex}>{task}</Text>
+                  <Text style={styles.task} key={taskIndex}>
+                    {task}
+                  </Text>
                 ))}
               </View>
             </View>
@@ -155,7 +173,9 @@ export const PDFDocument = ({
           <Text style={styles.subTitle}>{t('cv.skills')}</Text>
           <View style={styles.tasks}>
             {skills.map((skill, index) => (
-              <Text key={index}>{skill}</Text>
+              <Text style={styles.task} key={index}>
+                {skill}
+              </Text>
             ))}
           </View>
         </View>
