@@ -17,7 +17,10 @@ const PDFPreview = () => {
   };
 
   return (
-    <div style={{ height: '100vh', width: '100%' }}>
+    <div
+      style={{ height: '100vh', width: '100%' }}
+      className="preview-container"
+    >
       <div
         className="backarrow"
         onClick={handleBackClick}
@@ -25,7 +28,7 @@ const PDFPreview = () => {
       >
         <SVG_arrowBack />
       </div>
-      <PDFViewer width="100%" height="100%">
+      <PDFViewer width="100%" height="100%" showToolbar={false}>
         <PDFDocument {...documentData} />
       </PDFViewer>
     </div>
