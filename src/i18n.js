@@ -18,6 +18,14 @@ const resources = {
       footer: {
         by: 'Made with ♡ by ',
       },
+      cvBuilder: {
+        preview: 'Preview',
+      },
+      cv: {
+        experience: 'PROFESSIONAL EXPERIENCE',
+        education: 'EDUCATION',
+        skills: 'ADDITIONAL SKILLS',
+      },
     },
   },
 
@@ -35,6 +43,14 @@ const resources = {
       },
       footer: {
         by: 'Hecho con ♡ por ',
+      },
+      cvBuilder: {
+        preview: 'Previsualizar',
+      },
+      cv: {
+        experience: 'EXPERIENCIA PROFESIONAL',
+        education: 'EDUCACIÓN',
+        skills: 'HABILIDADES ADICIONALES',
       },
     },
   },
