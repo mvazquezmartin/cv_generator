@@ -1,1 +1,49 @@
-
+#root {
+  background: radial-gradient(
+        circle farthest-side at 0% 50%,
+        #eeeeee 23.5%,
+        #0000 0
+      )
+      33.6px 48px,
+    radial-gradient(
+        circle farthest-side at 0% 50%,
+        rgba(202, 102, 227, 0.05) 24%,
+        #0000 0
+      )
+      30.4px 48px,
+    linear-gradient(#eeeeee 14%, #0000 0, #0000 85%, #eeeeee 0) 0 0,
+    linear-gradient(
+        150deg,
+        #eeeeee 24%,
+        rgba(202, 102, 227, 0.05) 0,
+        rgba(202, 102, 227, 0.05) 26%,
+        #0000 0,
+        #0000 74%,
+        rgba(202, 102, 227, 0.05) 0,
+        rgba(202, 102, 227, 0.05) 76%,
+        #eeeeee 0
+      )
+      0 0,
+    linear-gradient(
+        30deg,
+        #eeeeee 24%,
+        rgba(202, 102, 227, 0.05) 0,
+        rgba(202, 102, 227, 0.05) 26%,
+        #0000 0,
+        #0000 74%,
+        rgba(202, 102, 227, 0.05) 0,
+        rgba(202, 102, 227, 0.05) 76%,
+        #eeeeee 0
+      )
+      0 0,
+    linear-gradient(
+        90deg,
+        rgba(202, 102, 227, 0.05) 2%,
+        #eeeeee 0,
+        #eeeeee 98%,
+        rgba(202, 102, 227, 0.05) 0%
+      )
+      0 0 #eeeeee;
+  background-size: 64px 96px;
+  background-color: #eeeeee;
+}
