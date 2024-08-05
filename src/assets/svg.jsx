@@ -229,6 +229,61 @@ const SVG_plus = () => {
     </svg>
   );
 };
+
+const SVG_logo = () => {
+  return (
+    <svg width="46" height="46">
+      <defs>
+        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: '#cb67e4', stopOpacity: 1 }} />
+          <stop
+            offset="100%"
+            style={{ stopColor: '#8b5cf6', stopOpacity: 1 }}
+          />
+        </linearGradient>
+      </defs>
+      <rect
+        x="2"
+        y="2"
+        width="42"
+        height="42"
+        rx="8"
+        ry="8"
+        fill="url(#grad1)"
+      />
+      <text
+        x="50%"
+        y="50%"
+        dominantBaseline="central"
+        textAnchor="middle"
+        fontSize="16"
+        fill="white"
+        fontFamily="Arial"
+      >
+        CV
+      </text>
+    </svg>
+  );
+};
+
+const SVG_reset = () => {
+  return (
+    <svg
+      width="24"
+      height="24"
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      data-icon="SvgRefreshCcw"
+      aria-hidden="true"
+    >
+      <path d="M8.4 10.044H3v-5.4M18.973 9.07A7.557 7.557 0 007.439 5.876 35.482 35.482 0 003 10.044m18 9.282v-5.9h-5.3M5.306 14.488a7.472 7.472 0 006.876 5.148 6.913 6.913 0 004.457-1.654A36.616 36.616 0 0021 13.423"></path>
+    </svg>
+  );
+};
 export {
   SVG_downloadIcon,
   SVG_ArgentinaFlag,
@@ -239,4 +294,6 @@ export {
   SVG_arrowBack,
   SVG_preview,
   SVG_plus,
+  SVG_logo,
+  SVG_reset,
 };
