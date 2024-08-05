@@ -1,211 +1,15 @@
-// import { useEffect, useState } from 'react';
-// import { v4 as uuidv4 } from 'uuid';
-// import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
-// import { Header } from '@/components/Header/Header';
-// import { EditableField } from '@/pages/CreateCV/EditableField';
-// import { SVG_moveIcon, SVG_delete } from '@/assets/svg';
-
-// import { useNavigate } from 'react-router-dom';
-
-// export const CVBuilder = () => {
-//   const [name, setName] = useState('M. Vazquez Martin');
-//   const [contact, setContact] = useState({
-//     location: 'Rosario, Santa Fe, Argentina',
-//     linkedin: 'linkedin.com/in/matiasvazquezmartin/',
-//     portfolio: 'mvazquezmartin.up.railway.app/',
-//     phone: '+54 341 12 34 56',
-//     email: 'mvazquezmartin@gmail.com',
-//   });
-//   const [description, setDescription] = useState('');
-//   const [experiences, setExperiences] = useState([
-//     { id: uuidv4(), title: 'Trabajo 1', tasks: ['función 1', 'función 2'] },
-//     { id: uuidv4(), title: 'Trabajo 2', tasks: ['función 3', 'función 4'] },
-//   ]);
-
-//   useEffect(() => {
-//     // Cargar datos desde localStorage
-//     const savedData = JSON.parse(localStorage.getItem('cvData'));
-//     if (savedData) {
-//       setName(savedData.name);
-//       setContact(savedData.contact);
-//       setDescription(savedData.description);
-//       setExperiences(savedData.experiences);
-//     }
-//   }, []);
-
-//   useEffect(() => {
-//     // Guardar datos en localStorage
-//     const dataToSave = {
-//       name,
-//       contact,
-//       description,
-//       experiences,
-//     };
-//     localStorage.setItem('cvData', JSON.stringify(dataToSave));
-//   }, [name, contact, description, experiences]);
-
-//   const navigate = useNavigate();
-
-//   const onDragEnd = (result) => {
-//     if (!result.destination) return;
-
-//     const reorderedExperiences = Array.from(experiences);
-//     const [movedExperience] = reorderedExperiences.splice(
-//       result.source.index,
-//       1
-//     );
-//     reorderedExperiences.splice(result.destination.index, 0, movedExperience);
-
-//     setExperiences(reorderedExperiences);
-//   };
-
-//   const handleContactChange = (field, value) => {
-//     setContact((prevContact) => ({
-//       ...prevContact,
-//       [field]: value,
-//     }));
-//   };
-
-//   const addExperience = () => {
-//     setExperiences([
-//       ...experiences,
-//       { id: uuidv4(), title: 'Nuevo Trabajo', tasks: ['Nueva función 1'] },
-//     ]);
-//   };
-
-//   const removeExperience = (id) => {
-//     setExperiences(experiences.filter((experience) => experience.id !== id));
-//   };
-
-//   const addTask = (experienceIndex) => {
-//     const newExperiences = [...experiences];
-//     newExperiences[experienceIndex].tasks.push('▪');
-//     setExperiences(newExperiences);
-//   };
-
-//   const previewData = {
-//     name,
-//     contact,
-//     description,
-//     experiences,
-//   };
-
-//   const handlePreviewClick = () => {
-//     // Guarda los datos en localStorage
-//     localStorage.setItem('cvData', JSON.stringify(previewData));
-
-//     // Navega a la página de previsualización
-//     navigate('/pdfpreview');
-//   };
-
-//   return (
-//     <>
-//       <Header
-//         showBtn={false}
-//         name={name}
-//         contact={contact}
-//         experiences={experiences}
-//       />
-//       <div className="cv-builder-container">
-//         <div className="cv-builder">
-//           <div className="title-name">
-//             <EditableField value={name} onChange={setName} />
-//           </div>
-//           <div className="contact-container">
-//             <EditableField
-//               value={contact.location}
-//               onChange={(value) => handleContactChange('location', value)}
-//             />
-//             <EditableField
-//               value={contact.linkedin}
-//               onChange={(value) => handleContactChange('linkedin', value)}
-//             />
-//             <EditableField
-//               value={contact.portfolio}
-//               onChange={(value) => handleContactChange('linkedin', value)}
-//             />
-//             <EditableField
-//               value={contact.phone}
-//               onChange={(value) => handleContactChange('phone', value)}
-//             />
-//             <EditableField
-//               value={contact.email}
-//               onChange={(value) => handleContactChange('email', value)}
-//             />
-//           </div>
-
-//           <DragDropContext onDragEnd={onDragEnd}>
-//             <Droppable droppableId="experiences">
-//               {(provided) => (
-//                 <div {...provided.droppableProps} ref={provided.innerRef}>
-//                   {experiences.map((experience, index) => (
-//                     <Draggable
-//                       key={experience.id}
-//                       draggableId={experience.id}
-//                       index={index}
-//                     >
-//                       {(provided) => (
-//                         <div
-//                           ref={provided.innerRef}
-//                           {...provided.draggableProps}
-//                         >
-//                           <div {...provided.dragHandleProps}>
-//                             <SVG_moveIcon />
-//                           </div>
-//                           <EditableField
-//                             value={experience.title}
-//                             onChange={(newTitle) => {
-//                               const newExperiences = [...experiences];
-//                               newExperiences[index].title = newTitle;
-//                               setExperiences(newExperiences);
-//                             }}
-//                           />
-//                           {experience.tasks.map((task, taskIndex) => (
-//                             <EditableField
-//                               key={taskIndex}
-//                               value={task}
-//                               onChange={(newTask) => {
-//                                 const newExperiences = [...experiences];
-//                                 newExperiences[index].tasks[taskIndex] =
-//                                   newTask;
-//                                 setExperiences(newExperiences);
-//                               }}
-//                               onEnter={() => addTask(index)}
-//                             />
-//                           ))}
-//                           <button
-//                             onClick={() => removeExperience(experience.id)}
-//                           >
-//                             <SVG_delete />
-//                           </button>
-//                         </div>
-//                       )}
-//                     </Draggable>
-//                   ))}
-//                   {provided.placeholder}
-//                 </div>
-//               )}
-//             </Droppable>
-//           </DragDropContext>
-
-//           <button onClick={addExperience}>Añadir Trabajo</button>
-//         </div>
-//         <button onClick={handlePreviewClick}>Previsualizar PDF</button>
-//       </div>
-//     </>
-//   );
-// };
 import { useContext } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
+import { useTranslation } from 'react-i18next';
+import { CVContext } from '@/context/CVContext';
 import { Header } from '@/components/Header/Header';
 import { EditableField } from '@/pages/CreateCV/EditableField';
-import { SVG_moveIcon, SVG_delete } from '@/assets/svg';
-import { useNavigate } from 'react-router-dom';
-import { CVContext } from '@/context/CVContext';
+import { SVG_moveIcon, SVG_delete, SVG_plus } from '@/assets/svg';
+import './CVBuilder.css';
 
 export const CVBuilder = () => {
   const { cvData, setCvData } = useContext(CVContext);
-  const navigate = useNavigate();
 
   const onDragEnd = (result) => {
     if (!result.destination) return;
@@ -238,7 +42,15 @@ export const CVBuilder = () => {
       ...prevData,
       experiences: [
         ...prevData.experiences,
-        { id: uuidv4(), title: 'Nuevo Trabajo', tasks: ['Nueva función 1'] },
+        {
+          id: uuidv4(),
+          company: 'Empresa',
+          location: 'Localidad',
+          position: 'Puesto',
+          startDate: 'Fecha de inicio',
+          endDate: 'Fecha final',
+          tasks: ['- función 1', '- función 2'],
+        },
       ],
     }));
   };
@@ -255,7 +67,7 @@ export const CVBuilder = () => {
   const addTask = (experienceIndex) => {
     setCvData((prevData) => {
       const newExperiences = [...prevData.experiences];
-      newExperiences[experienceIndex].tasks.push('▪');
+      newExperiences[experienceIndex].tasks.push('- ');
       return {
         ...prevData,
         experiences: newExperiences,
@@ -263,9 +75,70 @@ export const CVBuilder = () => {
     });
   };
 
-  const handlePreviewClick = () => {
-    navigate('/pdfpreview');
+  const onEducationDragEnd = (result) => {
+    if (!result.destination) return;
+
+    const reorderedEducation = Array.from(cvData.education);
+    const [movedEducation] = reorderedEducation.splice(result.source.index, 1);
+    reorderedEducation.splice(result.destination.index, 0, movedEducation);
+
+    setCvData((prevData) => ({
+      ...prevData,
+      education: reorderedEducation,
+    }));
   };
+
+  const addEducation = () => {
+    setCvData((prevData) => ({
+      ...prevData,
+      education: [
+        ...prevData.education,
+        {
+          id: uuidv4(),
+          institution: 'Nueva Institución',
+          location: 'Nueva Ubicación',
+          title: 'Nuevo Título',
+          date: 'Nueva Fecha',
+        },
+      ],
+    }));
+  };
+
+  const removeEducation = (id) => {
+    setCvData((prevData) => ({
+      ...prevData,
+      education: prevData.education.filter((education) => education.id !== id),
+    }));
+  };
+
+  const onSkillsDragEnd = (result) => {
+    if (!result.destination) return;
+
+    const reorderedSkills = Array.from(cvData.skills);
+    const [movedSkill] = reorderedSkills.splice(result.source.index, 1);
+    reorderedSkills.splice(result.destination.index, 0, movedSkill);
+
+    setCvData((prevData) => ({
+      ...prevData,
+      skills: reorderedSkills,
+    }));
+  };
+
+  const addSkill = () => {
+    setCvData((prevData) => ({
+      ...prevData,
+      skills: [...prevData.skills, '- Nueva habilidad'],
+    }));
+  };
+
+  const removeSkill = (index) => {
+    setCvData((prevData) => ({
+      ...prevData,
+      skills: prevData.skills.filter((_, skillIndex) => skillIndex !== index),
+    }));
+  };
+
+  const { t } = useTranslation();
 
   return (
     <>
@@ -273,7 +146,10 @@ export const CVBuilder = () => {
         showBtn={false}
         name={cvData.name}
         contact={cvData.contact}
+        description={cvData.description}
         experiences={cvData.experiences}
+        education={cvData.education}
+        skills={cvData.skills}
       />
       <div className="cv-builder-container">
         <div className="cv-builder">
@@ -284,101 +160,360 @@ export const CVBuilder = () => {
                 setCvData((prevData) => ({ ...prevData, name }))
               }
             />
+            <EditableField
+              value={cvData.position}
+              onChange={(position) =>
+                setCvData((prevData) => ({ ...prevData, position }))
+              }
+            />
           </div>
           <div className="contact-container">
             <EditableField
               value={cvData.contact.location}
               onChange={(value) => handleContactChange('location', value)}
             />
+            ·
             <EditableField
               value={cvData.contact.linkedin}
               onChange={(value) => handleContactChange('linkedin', value)}
             />
+            ·
             <EditableField
               value={cvData.contact.portfolio}
               onChange={(value) => handleContactChange('portfolio', value)}
             />
+            ·
             <EditableField
               value={cvData.contact.phone}
               onChange={(value) => handleContactChange('phone', value)}
             />
+            ·
             <EditableField
               value={cvData.contact.email}
               onChange={(value) => handleContactChange('email', value)}
             />
           </div>
-
-          <DragDropContext onDragEnd={onDragEnd}>
-            <Droppable droppableId="experiences">
-              {(provided) => (
-                <div {...provided.droppableProps} ref={provided.innerRef}>
-                  {cvData.experiences.map((experience, index) => (
-                    <Draggable
-                      key={experience.id}
-                      draggableId={experience.id}
-                      index={index}
-                    >
-                      {(provided) => (
-                        <div
-                          ref={provided.innerRef}
-                          {...provided.draggableProps}
-                        >
-                          <div {...provided.dragHandleProps}>
-                            <SVG_moveIcon />
+          <div className="divider-line"></div>
+          <div className="description-container">
+            <EditableField
+              value={cvData.description}
+              onChange={(value) => handleContactChange('description', value)}
+            />
+          </div>
+          <div className="experiences-container">
+            <p className="subtitle">{t('cv.experience')}</p>
+            <DragDropContext onDragEnd={onDragEnd}>
+              <Droppable droppableId="experiences">
+                {(provided) => (
+                  <div
+                    {...provided.droppableProps}
+                    ref={provided.innerRef}
+                    className="experience-dnd"
+                  >
+                    {cvData.experiences.map((experience, index) => (
+                      <Draggable
+                        key={experience.id}
+                        draggableId={experience.id}
+                        index={index}
+                      >
+                        {(provided) => (
+                          <div
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            className="experience-card"
+                          >
+                            <div
+                              {...provided.dragHandleProps}
+                              className="btn-move"
+                            >
+                              <SVG_moveIcon />
+                            </div>
+                            <div className="experience-header">
+                              <EditableField
+                                value={experience.company}
+                                onChange={(newCompany) => {
+                                  setCvData((prevData) => {
+                                    const newExperiences = [
+                                      ...prevData.experiences,
+                                    ];
+                                    newExperiences[index].company = newCompany;
+                                    return {
+                                      ...prevData,
+                                      experiences: newExperiences,
+                                    };
+                                  });
+                                }}
+                              />
+                              <EditableField
+                                value={experience.location}
+                                onChange={(newLocation) => {
+                                  setCvData((prevData) => {
+                                    const newExperiences = [
+                                      ...prevData.experiences,
+                                    ];
+                                    newExperiences[index].location =
+                                      newLocation;
+                                    return {
+                                      ...prevData,
+                                      experiences: newExperiences,
+                                    };
+                                  });
+                                }}
+                              />
+                            </div>
+                            <div className="experience-details">
+                              <EditableField
+                                value={experience.position}
+                                onChange={(newPosition) => {
+                                  setCvData((prevData) => {
+                                    const newExperiences = [
+                                      ...prevData.experiences,
+                                    ];
+                                    newExperiences[index].position =
+                                      newPosition;
+                                    return {
+                                      ...prevData,
+                                      experiences: newExperiences,
+                                    };
+                                  });
+                                }}
+                              />
+                              <EditableField
+                                value={`${experience.startDate} - ${experience.endDate}`}
+                                onChange={(newDates) => {
+                                  const [newStartDate, newEndDate] =
+                                    newDates.split(' - ');
+                                  setCvData((prevData) => {
+                                    const newExperiences = [
+                                      ...prevData.experiences,
+                                    ];
+                                    newExperiences[index].startDate =
+                                      newStartDate;
+                                    newExperiences[index].endDate = newEndDate;
+                                    return {
+                                      ...prevData,
+                                      experiences: newExperiences,
+                                    };
+                                  });
+                                }}
+                              />
+                            </div>
+                            <div className="experience-task">
+                              {experience.tasks
+                                .filter((task) => task.trim() !== '')
+                                .map((task, taskIndex) => (
+                                  <EditableField
+                                    key={taskIndex}
+                                    value={task}
+                                    onChange={(newTask) => {
+                                      setCvData((prevData) => {
+                                        const newExperiences = [
+                                          ...prevData.experiences,
+                                        ];
+                                        newExperiences[index].tasks[taskIndex] =
+                                          newTask;
+                                        return {
+                                          ...prevData,
+                                          experiences: newExperiences,
+                                        };
+                                      });
+                                    }}
+                                    onEnter={() => addTask(index)}
+                                  />
+                                ))}
+                            </div>
+                            <button
+                              onClick={() => removeExperience(experience.id)}
+                              className="btn-delete"
+                            >
+                              <SVG_delete />
+                            </button>
                           </div>
-                          <EditableField
-                            value={experience.title}
-                            onChange={(newTitle) => {
-                              setCvData((prevData) => {
-                                const newExperiences = [
-                                  ...prevData.experiences,
-                                ];
-                                newExperiences[index].title = newTitle;
-                                return {
-                                  ...prevData,
-                                  experiences: newExperiences,
-                                };
-                              });
-                            }}
-                          />
-                          {experience.tasks.map((task, taskIndex) => (
+                        )}
+                      </Draggable>
+                    ))}
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            </DragDropContext>
+            <button onClick={addExperience} className="btn-add">
+              <SVG_plus />
+            </button>
+          </div>
+          <div className="education-container">
+            <p className="subtitle">{t('cv.education')}</p>
+            <DragDropContext onDragEnd={onEducationDragEnd}>
+              <Droppable droppableId="education">
+                {(provided) => (
+                  <div
+                    {...provided.droppableProps}
+                    ref={provided.innerRef}
+                    className="education-dnd"
+                  >
+                    {cvData.education.map((education, index) => (
+                      <Draggable
+                        key={education.id}
+                        draggableId={education.id}
+                        index={index}
+                      >
+                        {(provided) => (
+                          <div
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            className="education-card"
+                          >
+                            <div
+                              {...provided.dragHandleProps}
+                              className="btn-move"
+                            >
+                              <SVG_moveIcon />
+                            </div>
+                            <div className="education-header">
+                              <EditableField
+                                value={education.institution}
+                                onChange={(newInstitution) => {
+                                  setCvData((prevData) => {
+                                    const newEducation = [
+                                      ...prevData.education,
+                                    ];
+                                    newEducation[index].institution =
+                                      newInstitution;
+                                    return {
+                                      ...prevData,
+                                      education: newEducation,
+                                    };
+                                  });
+                                }}
+                              />
+                              <EditableField
+                                value={education.location}
+                                onChange={(newLocation) => {
+                                  setCvData((prevData) => {
+                                    const newEducation = [
+                                      ...prevData.education,
+                                    ];
+                                    newEducation[index].location = newLocation;
+                                    return {
+                                      ...prevData,
+                                      education: newEducation,
+                                    };
+                                  });
+                                }}
+                              />
+                            </div>
+                            <div className="education-detail">
+                              <EditableField
+                                value={education.title}
+                                onChange={(newTitle) => {
+                                  setCvData((prevData) => {
+                                    const newEducation = [
+                                      ...prevData.education,
+                                    ];
+                                    newEducation[index].title = newTitle;
+                                    return {
+                                      ...prevData,
+                                      education: newEducation,
+                                    };
+                                  });
+                                }}
+                              />
+                              <EditableField
+                                value={education.date}
+                                onChange={(newDate) => {
+                                  setCvData((prevData) => {
+                                    const newEducation = [
+                                      ...prevData.education,
+                                    ];
+                                    newEducation[index].date = newDate;
+                                    return {
+                                      ...prevData,
+                                      education: newEducation,
+                                    };
+                                  });
+                                }}
+                              />
+                            </div>
+                            <button
+                              onClick={() => removeEducation(education.id)}
+                              className="btn-delete"
+                            >
+                              <SVG_delete />
+                            </button>
+                          </div>
+                        )}
+                      </Draggable>
+                    ))}
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            </DragDropContext>
+            <button onClick={addEducation} className="btn-add">
+              <SVG_plus />
+            </button>
+          </div>
+          <div className="skills-container">
+            <p className="subtitle">{t('cv.skills')}</p>
+            <DragDropContext onDragEnd={onSkillsDragEnd}>
+              <Droppable droppableId="skills">
+                {(provided) => (
+                  <div
+                    {...provided.droppableProps}
+                    ref={provided.innerRef}
+                    className="skills-dnd"
+                  >
+                    {cvData.skills.map((skill, index) => (
+                      <Draggable
+                        key={index}
+                        draggableId={index.toString()}
+                        index={index}
+                      >
+                        {(provided) => (
+                          <div
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            className="skill-card"
+                          >
+                            <div
+                              {...provided.dragHandleProps}
+                              className="btn-move"
+                            >
+                              <SVG_moveIcon />
+                            </div>
                             <EditableField
-                              key={taskIndex}
-                              value={task}
-                              onChange={(newTask) => {
+                              value={skill}
+                              onChange={(newSkill) => {
                                 setCvData((prevData) => {
-                                  const newExperiences = [
-                                    ...prevData.experiences,
-                                  ];
-                                  newExperiences[index].tasks[taskIndex] =
-                                    newTask;
+                                  const newSkills = [...prevData.skills];
+                                  newSkills[index] = newSkill;
                                   return {
                                     ...prevData,
-                                    experiences: newExperiences,
+                                    skills: newSkills,
                                   };
                                 });
                               }}
-                              onEnter={() => addTask(index)}
                             />
-                          ))}
-                          <button
-                            onClick={() => removeExperience(experience.id)}
-                          >
-                            <SVG_delete />
-                          </button>
-                        </div>
-                      )}
-                    </Draggable>
-                  ))}
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
-          </DragDropContext>
-
-          <button onClick={addExperience}>Añadir Trabajo</button>
+                            <button
+                              onClick={() => removeSkill(index)}
+                              className="btn-delete"
+                            >
+                              <SVG_delete />
+                            </button>
+                          </div>
+                        )}
+                      </Draggable>
+                    ))}
+                    {provided.placeholder}
+                  </div>
+                )}
+              </Droppable>
+            </DragDropContext>
+            <button onClick={addSkill} className="btn-add">
+              <SVG_plus />
+            </button>
+          </div>
         </div>
-        <button onClick={handlePreviewClick}>Previsualizar PDF</button>
       </div>
     </>
   );

@@ -1,0 +1,181 @@
+.cv-builder-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'STIX Two Text';
+
+  .cv-builder {
+    display: flex;
+    flex-direction: column;
+    width: 795px;
+    margin: 2rem 0;
+    border: 1px solid #666;
+    padding: 10px;
+
+    .divider-line {
+      border-bottom: 1px solid #666;
+      width: 100%;
+      height: 5px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      font-weight: bold;
+      border-bottom: 1px solid #666;
+      margin: 15px 0;
+    }
+
+    .title-name {
+      font-weight: bold;
+      font-size: 32px;
+      text-align: center;
+
+      & div:nth-child(2) {
+        font-size: 16px;
+        font-weight: normal;
+        color: #666;
+      }
+    }
+
+    .contact-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      font-size: 14px;
+      margin-top: 7px;
+      column-gap: 5px;
+    }
+    .description-container {
+      font-style: italic;
+      padding: 5px;
+    }
+
+    .experiences-container,
+    .education-container,
+    .skills-container {
+      display: flex;
+      flex-direction: column;
+      .experience-dnd,
+      .education-dnd, .skills-dnd {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+
+        .experience-card,
+        .education-card, .skill-card {
+          display: flex;
+          flex-direction: column;
+          border: 1px dashed #666;
+          background: #e1e1e1;
+          position: relative;
+          padding: 0 10px;
+
+          .btn-move {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: -40px;
+            top: -10px;
+            height: 35px;
+            width: 30px;
+            background-color: #cb67e4;
+            margin: 0.5rem;
+            /* padding: 0.5rem; */
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            font-weight: 500;
+            cursor: grab;
+            box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+
+            &:hover {
+              background-color: #a649c9;
+            }
+
+            &:active {
+              background-color: #944baf;
+            }
+          }
+          .experience-header,
+          .education-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+          }
+          .experience-details,
+          .education-detail {
+            display: flex;
+            justify-content: space-between;
+            & div:nth-child(2) {
+              font-style: italic;
+            }
+          }
+          .experience-task {
+            padding-left: 1rem;
+            padding-top: 5px;
+          }
+        }
+        .btn-delete {
+          align-self: end;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 35px;
+          width: 30px;
+          background-color: #e74c3c;
+          margin: 0.5rem;
+          /* padding: 0.5rem; */
+          color: white;
+          border: none;
+          border-radius: 6px;
+          font-size: 1.25rem;
+          line-height: 1.75rem;
+          font-weight: 500;
+          cursor: pointer;
+          box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1);
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #c0392b;
+          }
+
+          &:active {
+            background-color: #a93226;
+          }
+        }
+      }
+      .btn-add {
+        align-self: end;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 35px;
+        width: 30px;
+        background-color: #cb67e4;
+        margin: 0.5rem;
+        /* padding: 0.5rem; */
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        font-weight: 500;
+        cursor: pointer;
+        box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #a649c9;
+        }
+
+        &:active {
+          background-color: #944baf;
+        }
+      }
+    }
+  }
+}
