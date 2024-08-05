@@ -5,24 +5,41 @@ footer {
   align-items: center;
   row-gap: 1rem;
   background: #262626;
-  height: 30dvh;
+  height: 25dvh;
   color: #e1e1e1;
+  position: relative;
 
-  p {
-    font-weight: 600;
-    a {
-      transition: color 0.3s ease;
-      &:hover {
-        color: #cb67e4;
-      }
-    }
+  .bg-absolute {
+    position: absolute;
+    height: 25dvh;
+    background: #262626;
+    top: -25dvh;
+    width: 100%;
   }
 
-  .github-container {
-    height: 30px;
-    width: 30px;
-    svg {
-      color: #e1e1e1;
+  .footerby {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    row-gap: 1rem;
+    p {
+      font-weight: 600;
+      font-size: 14px;
+      a {
+        transition: color 0.3s ease;
+        &:hover {
+          color: #cb67e4;
+        }
+      }
+    }
+
+    .github-container {
+      height: 30px;
+      width: 30px;
+      svg {
+        color: #e1e1e1;
+      }
     }
   }
 }

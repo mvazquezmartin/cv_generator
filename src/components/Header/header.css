@@ -1,3 +1,9 @@
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
 header {
   display: flex;
   width: 100%;
@@ -13,77 +19,115 @@ header {
     justify-content: space-between;
     max-width: 1280px;
     width: 100%;
-  }
-
-  .language-download {
-    .btn-header-container {
+    .logo-header {
       display: flex;
-      column-gap: 1rem;
-      .btn-preview {
-        background-color: #63a2d2;
-        color: #ffffff;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        padding: 0.5rem 1rem;
-        font-size: 14px;
-        line-height: 1.75rem;
-        font-weight: 500;
-        height: 50px;
-        width: 135px;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      filter: drop-shadow(3px 2px 5px #ea00ff9f);
+    }
+
+    .language-download {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .btn-header-container {
         display: flex;
-        justify-content: space-around;
-        align-items: center;
-        box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1);
+        column-gap: 1rem;
+        .btn-reset {
+          opacity: 0.2;
+          background-color: #e74c3c;
+          color: #ffffff;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          padding: 0.5rem 1rem;
+          font-size: 14px;
+          line-height: 1.75rem;
+          font-weight: 500;
+          height: 50px;
+          width: 135px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1);
+          transition: background-color 0.3s ease, opacity 0.3s ease;
 
-        &:hover {
-          background-color: #4f8fc2;
+          &:hover {
+            opacity: 1;
+            background-color: #c0392b;
+          }
+
+          &:active {
+            background-color: #a93226;
+          }
         }
+        .btn-preview {
+          background-color: #63a2d2;
+          color: #ffffff;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          padding: 0.5rem 1rem;
+          font-size: 14px;
+          line-height: 1.75rem;
+          font-weight: 500;
+          height: 50px;
+          width: 135px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          transition: background-color 0.3s ease;
+          box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1);
 
-        &:active {
-          background-color: #3f7aae;
+          &:hover {
+            background-color: #4f8fc2;
+          }
+
+          &:active {
+            background-color: #3f7aae;
+          }
+
+          svg {
+            width: 25px;
+            height: 25px;
+            stroke-width: 2;
+            color: inherit;
+          }
         }
+        .btn-download {
+          background-color: #cb67e4;
+          color: #e1e1e1;
+          border: none;
+          border-radius: 6px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          padding: 0.5rem 1rem;
+          font-size: 14px;
+          line-height: 1.75rem;
+          font-weight: 500;
+          height: 50px;
+          width: 135px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          font-weight: 700;
+          box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1);
 
-        svg {
-          width: 25px;
-          height: 25px;
-          stroke-width: 2;
-          color: inherit;
-        }
-      }
-      .btn-download {
-        background-color: #cb67e4;
-        color: #e1e1e1;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        padding: 0.5rem 1rem;
-        font-size: 14px;
-        line-height: 1.75rem;
-        font-weight: 500;
-        height: 50px;
-        width: 135px;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        font-weight: 700;
-        box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.1);
+          &:hover {
+            background-color: #a649c9;
+          }
 
-        &:hover {
-          background-color: #a649c9;
-        }
+          &:active {
+            background-color: #944baf;
+          }
 
-        &:active {
-          background-color: #944baf;
-        }
-
-        svg {
-          width: 20px;
-          height: 20px;
-          stroke-width: 3;
-          color: inherit;
+          svg {
+            width: 20px;
+            height: 20px;
+            stroke-width: 3;
+            color: inherit;
+          }
         }
       }
     }
