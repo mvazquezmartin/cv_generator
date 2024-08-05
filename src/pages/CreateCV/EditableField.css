@@ -1,0 +1,23 @@
+.editable-field-container {
+  .editable-field-input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    font-size: inherit;
+    font-family: inherit;
+    padding: 10px;
+    margin: 0;
+    background: none;
+    resize: none;
+    overflow: hidden;
+    &:focus {
+      border-bottom: 1px solid #666;
+    }
+  }
+  .editable-field-span {
+    cursor: pointer;
+    white-space: pre-wrap; /* Asegura que los saltos de línea se mantengan en el span */
+    width: 100%;
+    display: inline-block;
+  }
+}
