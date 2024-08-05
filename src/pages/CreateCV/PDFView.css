@@ -1,0 +1,27 @@
+.backarrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 55px;
+  width: 50px;
+  background-color: #cb67e4;
+  margin: 0.5rem 1rem;
+  padding: 0.5rem;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #a649c9;
+  }
+
+  &:active {
+    background-color: #944baf;
+  }
+}

@@ -2,6 +2,7 @@ import { PDFViewer } from '@react-pdf/renderer';
 import { useNavigate } from 'react-router-dom';
 import { PDFDocument } from '@/pages/CreateCV/CVDesign';
 import { SVG_arrowBack } from '@/assets/svg';
+import './PDFView.css';
 
 const PDFPreview = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const PDFPreview = () => {
   };
 
   return (
-    <>
+    <div style={{ height: '100vh', width: '100%' }}>
       <div
         className="backarrow"
         onClick={handleBackClick}
@@ -24,10 +25,10 @@ const PDFPreview = () => {
       >
         <SVG_arrowBack />
       </div>
-      <PDFViewer width="100%" height="600">
+      <PDFViewer width="100%" height="100%">
         <PDFDocument {...documentData} />
       </PDFViewer>
-    </>
+    </div>
   );
 };
 
