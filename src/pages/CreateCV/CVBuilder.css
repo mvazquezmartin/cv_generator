@@ -58,6 +58,9 @@
           border: 1px dashed #cb67e4;
           background: #e1e1e1;
         }
+        .editable-field-editing{
+          width: 250px;
+        }
       }
     }
     .description-container {

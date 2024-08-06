@@ -47,7 +47,7 @@ const resources = {
           linkedin: 'linkedin.com/in/matiasvazquezmartin/',
           portfolio: 'mvazquezmartin.up.railway.app/',
           phone: '+54 341 12 34 56',
-          email: 'mvazquezmartin@gmail.com',
+          email: 'matias.vazquezmartin@gmail.com',
         },
         description:
           'With over 5 years of experience as a Software Developer, I have led BackEnd projects at Mercado Libre. Thanks to my management, a 40% optimization in product delivery times was achieved, a 25% increase in web page performance, and the consolidation of a centralized platform.',
@@ -164,7 +164,7 @@ const resources = {
           linkedin: 'linkedin.com/in/matiasvazquezmartin/',
           portfolio: 'mvazquezmartin.up.railway.app/',
           phone: '+54 341 12 34 56',
-          email: 'mvazquezmartin@gmail.com',
+          email: 'matias.vazquezmartin@gmail.com',
         },
         description:
           'Con más de 5 años de trayectoria como Desarrollador de Software, he liderado proyectos de BackEnd en Mercado Libre. Gracias a mi gestión, se logró una optimización del 40% en los tiempos de entrega de productos, un incremento del 25% en el rendimiento de las páginas web y la consolidación de una plataforma centralizada.',

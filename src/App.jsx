@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { MainLayout } from './pages/Home/MainLayout';
-import '@/style/App.css';
-import { CVBuilder } from './pages/CreateCV/CVBuilder';
+import { MainLayout } from '@/pages/Home/MainLayout';
+import { CVBuilder } from '@/pages/CreateCV/CVBuilder';
 import PDFPreview from '@/pages/CreateCV/PDFView';
 import { CVProvider } from '@/context/CVContext';
+import '@/style/App.css';
 
 function App() {
   return (
