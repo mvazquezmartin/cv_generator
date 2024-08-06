@@ -58,7 +58,7 @@
           border: 1px dashed #cb67e4;
           background: #e1e1e1;
         }
-        .editable-field-editing{
+        .editable-field-editing {
           width: 250px;
         }
       }
@@ -157,6 +157,11 @@
               content: ' ';
               padding-right: 0.5em; /* Espacio entre el guion y el texto */
             }
+            @media only screen and (max-width: 600px){
+              &{
+                padding-left: 1rem;
+              }
+            }
           }
         }
         .btn-delete {
@@ -218,6 +223,12 @@
           background-color: #944baf;
         }
       }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    & {
+      padding: 5rem 1.3rem 1rem 0.5rem;
     }
   }
 }

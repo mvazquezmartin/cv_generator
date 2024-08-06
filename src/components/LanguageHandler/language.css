@@ -43,7 +43,7 @@
       width: max-content;
       text-align: left;
       color: #e1e1e1;
-      &:hover{
+      &:hover {
         color: #aaa;
       }
     }
@@ -61,5 +61,7 @@
   &:hover {
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+  }
+  @media only screen and (max-width: 600px) {
   }
 }
