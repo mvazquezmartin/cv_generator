@@ -1,8 +1,8 @@
+import { useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SVG_USAFlag, SVG_ArgentinaFlag } from '@/assets/svg';
-import './language.css';
-import { useContext } from 'react';
 import { CVContext } from '@/context/CVContext';
+import './language.css';
 
 export const LanguageHandler = () => {
   const { i18n } = useTranslation();
