@@ -3,9 +3,9 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 5rem;
+  row-gap: 1rem;
   background: #262626;
-  height: 30dvh;
+  height: 25dvh;
   color: #e1e1e1;
   position: relative;
 
@@ -66,11 +66,13 @@ footer {
   }
   @media (width <= 600px) {
     & {
+      row-gap: 3rem;
+      height: 30dvh;
       .bg-absolute {
         height: 200px;
-        bottom: 240px;
+        bottom: 220px;
       }
-      .faq{
+      .faq {
         margin: 0 1rem;
         font-size: 1rem;
         text-align: center;
