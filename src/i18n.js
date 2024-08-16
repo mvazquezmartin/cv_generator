@@ -41,7 +41,7 @@ const resources = {
       },
       CV_TEMPLATE: {
         name: 'M. Vazquez Martin',
-        position: 'FullStack MERM Developer',
+        position: 'FullStack MERN Developer',
         contact: {
           location: 'Rosario, Santa Fe, Argentina',
           linkedin: 'linkedin.com/in/matiasvazquezmartin/',
@@ -158,7 +158,7 @@ const resources = {
       },
       CV_TEMPLATE: {
         name: 'M. Vazquez Martin',
-        position: 'Desarrollador FullStack MERM',
+        position: 'Desarrollador FullStack MERN',
         contact: {
           location: 'Rosario, Santa Fe, Argentina',
           linkedin: 'linkedin.com/in/matiasvazquezmartin/',
@@ -173,7 +173,7 @@ const resources = {
             id: uuidv4(),
             company: 'Mercado Libre',
             location: 'Buenos Aires, Argentina',
-            position: 'Lead BackEnd Architect',
+            position: 'Arquitecto Principal de BackEnd',
             startDate: 'Octubre 2020',
             endDate: 'Presente',
             tasks: [
