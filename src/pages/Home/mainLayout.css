@@ -17,7 +17,7 @@
       justify-content: center;
       align-items: center;
       h1 {        
-        font-size: clamp(2rem, 3vw + 1rem, 3.75rem);
+        font-size: clamp(2.5rem, 3vw + 1rem, 3.75rem);
         /* font-size: 3.75rem; */
         line-height: 1;
         display: flex;
