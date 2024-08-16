@@ -13,16 +13,7 @@ import './header.css';
 import { useContext } from 'react';
 import { CVContext } from '@/context/CVContext';
 
-export const Header = ({
-  showBtn,
-  name,
-  contact,
-  description,
-  experiences,
-  education,
-  skills,
-  fixed,
-}) => {
+export const Header = ({ showBtn, cvData, fixed }) => {
   const navigate = useNavigate();
   const { t } = useTranslation();
   const handlePreviewClick = () => {
@@ -52,15 +43,15 @@ export const Header = ({
               <PDFDownloadLink
                 document={
                   <PDFDocument
-                    name={name}
-                    contact={contact}
-                    description={description}
-                    experiences={experiences}
-                    education={education}
-                    skills={skills}
+                    name={cvData.name}
+                    contact={cvData.contact}
+                    description={cvData.description}
+                    experiences={cvData.experiences}
+                    education={cvData.education}
+                    skills={cvData.skills}
                   />
                 }
-                fileName={`cv_${name.split(' ').join('_')}.pdf`}
+                fileName={`cv_${cvData.name.split(' ').join('_')}.pdf`}
               >
                 <button className="btn-download">
                   <SVG_downloadIcon />

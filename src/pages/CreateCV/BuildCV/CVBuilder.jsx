@@ -14,16 +14,7 @@ export const CVBuilder = () => {
 
   return (
     <>
-      <Header
-        showBtn={false}
-        name={cvData.name}
-        contact={cvData.contact}
-        description={cvData.description}
-        experiences={cvData.experiences}
-        education={cvData.education}
-        skills={cvData.skills}
-        fixed={true}
-      />
+      <Header showBtn={false} fixed={true} cvData={cvData} />
       <div className="cv-builder-container">
         <div className="cv-builder">
           <NameSection cvData={cvData} />
