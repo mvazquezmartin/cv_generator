@@ -17,6 +17,22 @@ footer {
     width: 100%;
   }
 
+  .faq {
+    cursor: pointer;
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    padding: 1rem 2rem;
+    transition: all 0.5s ease;
+    color: #fff;
+    border: 1px dashed #fff;
+    background: #353535;
+    &:hover {
+      border: 1px dashed #cb67e4;
+      color: #cb67e4;
+      background: #262626;
+    }
+  }
+
   .footerby {
     position: relative;
     display: flex;
@@ -48,9 +64,9 @@ footer {
       }
     }
   }
-  @media (width <= 600px){
-    &{
-      .bg-absolute{
+  @media (width <= 600px) {
+    & {
+      .bg-absolute {
         height: 200px;
         bottom: 190px;
       }

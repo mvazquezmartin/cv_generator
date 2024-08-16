@@ -1,12 +1,12 @@
 import { useContext } from 'react';
 import { CVContext } from '@/context/CVContext';
 import { Header } from '@/components/Header/Header';
-import { NameSection } from '@/pages/CreateCV/BuildCV/NameSection/NameSection';
-import { ContactSection } from '@/pages/CreateCV/BuildCV/ContactSection/ContactSection';
-import { DescriptionSection } from '@/pages/CreateCV/BuildCV/DescriptionSection/DescriptionSection';
-import { ExperienceSection } from '@/pages/CreateCV/BuildCV/ExperienceSection/ExperienceSection';
-import { EducationSection } from '@/pages/CreateCV/BuildCV/EducationSection/EducationSection';
-import { SkillsSection } from '@/pages/CreateCV/BuildCV/SkillsSection/SkillsSection';
+import { NameSection } from '@/pages/CreateCV/NameSection/NameSection';
+import { ContactSection } from '@/pages/CreateCV/ContactSection/ContactSection';
+import { DescriptionSection } from '@/pages/CreateCV/DescriptionSection/DescriptionSection';
+import { ExperienceSection } from '@/pages/CreateCV/ExperienceSection/ExperienceSection';
+import { EducationSection } from '@/pages/CreateCV/EducationSection/EducationSection';
+import { SkillsSection } from '@/pages/CreateCV/SkillsSection/SkillsSection';
 import './CVBuilder.css';
 
 export const CVBuilder = () => {

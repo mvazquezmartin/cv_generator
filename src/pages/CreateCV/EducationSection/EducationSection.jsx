@@ -1,11 +1,11 @@
 import { useContext } from 'react';
 import { CVContext } from '@/context/CVContext';
-import { handleDragEnd } from '@/pages/CreateCV/BuildCV/utils/dragEnd';
+import { handleDragEnd } from '@/pages/CreateCV/utils/dragEnd';
 import { SVG_delete, SVG_moveIcon, SVG_plus } from '@/assets/svg';
 import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
-import { handleFieldChange } from '@/pages/CreateCV/BuildCV/utils/handleChange';
+import { handleFieldChange } from '@/pages/CreateCV/utils/handleChange';
 import { useTranslation } from 'react-i18next';
-import { EditableField } from '@/pages/CreateCV/BuildCV/EditableField/EditableField';
+import { EditableField } from '@/pages/CreateCV/EditableField/EditableField';
 
 export const EducationSection = ({ cvData }) => {
   const { setCvData, addEducation, removeEducation } = useContext(CVContext);

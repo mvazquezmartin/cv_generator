@@ -4,15 +4,10 @@ import { Header } from '@/components/Header/Header';
 import { useNavigate } from 'react-router-dom';
 import screenshot from '/Screenshot.png';
 import './mainLayout.css';
+import { BtnStart } from '@/pages/Home/BtnStart';
 
 export const MainLayout = () => {
-  const navigate = useNavigate();
-
   const { t } = useTranslation();
-
-  const handleNavigate = () => {
-    navigate('/editorcv');
-  };
 
   return (
     <>
@@ -26,11 +21,12 @@ export const MainLayout = () => {
             </h1>
             <p>{t('home.description')}</p>
           </div>
-          <div className="home-action-btn">
+          {/* <div className="home-action-btn">
             <button className="btn-start" onClick={handleNavigate}>
               {t('home.button')}
             </button>
-          </div>
+          </div> */}
+          <BtnStart />
           <div className="screenshot-container">
             <img src={screenshot} alt="screenshot from website" />
           </div>

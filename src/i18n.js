@@ -113,6 +113,44 @@ const resources = {
           '- Native Spanish, fluent English.',
         ],
       },
+      FAQ: {
+        firstQ: {
+          title: 'Why Use the Harvard College Bullet Point Resume Template?',
+          subtitle1: 'The Standard of Excellence',
+          answer1:
+            'The Harvard College Bullet Point Resume template was designed by experts at Harvard University, one of the world’s most prestigious educational institutions. It’s specifically created to highlight the best of your experience, skills, and accomplishments in a clear and concise manner, meeting the highest expectations of employers.',
+          subtitle2: 'Clarity and Organization',
+          answer2:
+            'This format focuses on clarity and the organization of information. The key points of your work experience and skills are presented in bullet-point format, making it easy for recruiters and employers to quickly identify your most important qualities. This structure is particularly useful for those with diverse experience who need to show their value directly and effectively.',
+          subtitle3: 'Achievement-Oriented',
+          answer3:
+            'The template emphasizes your accomplishments in each role, rather than daily tasks. This results-oriented approach is crucial in competitive selection processes, where highlighting your achievements can make the difference between being hired or not.',
+        },
+        secondQ: {
+          title: 'Advantages of Using the Template',
+          subtitle1: 'Professionalism and Simplicity',
+          answer1:
+            'The template combines a clean, professional design with a simplified approach, allowing your information to be presented effectively without unnecessary distractions. It’s ideal for both those with extensive experience and those just starting their careers who need to highlight key skills and achievements.',
+          subtitle2: 'Adaptability',
+          answer2:
+            'Although based on a proven design, this template is flexible enough to be customized to the needs of different industries and experience levels. You can easily adapt it to fit positions in technology, finance, marketing, education, and more.',
+          subtitle3: 'Efficiency in the Hiring Process',
+          answer3:
+            'Since many employers are familiar with this format, using it can streamline the selection process. The standardized structure makes it easier to quickly review and compare candidates, which can give you a competitive edge.',
+        },
+        thirdQ: {
+          title: 'When Should You Use This Template?',
+          subtitle1: 'Applications in Traditional Industries',
+          answer1:
+            'This format is particularly well-suited for industries like finance, consulting, and law, where clarity, conciseness, and a focus on achievements are highly valued. If you’re applying for roles in these sectors, this template can help you stand out.',
+          subtitle2: 'Highly Competitive Selection Processes',
+          answer2:
+            'In situations where you face intense competition for a position, using a well-structured resume that focuses on specific achievements can be a decisive factor. This template is designed to showcase your potential in such contexts.',
+          subtitle3: 'If You Need to Highlight Specific Achievements',
+          answer3:
+            'If your experience includes standout achievements that set you apart from other candidates, this format is ideal. It allows you to draw attention to those achievements without losing clarity in the overall presentation of your resume.',
+        },
+      },
     },
   },
 
@@ -229,6 +267,45 @@ const resources = {
           '- JavaScript, TypeScript, Astro, ReactJS, NodeJS, Express, SQL, NoSql, Git.',
           '- Ingles fluido, Español nativo.',
         ],
+      },
+      FAQ: {
+        firstQ: {
+          title:
+            '¿Por qué usar la plantilla Harvard College Bullet Point Resume?',
+          subtitle1: 'El estándar de excelencia',
+          answer1:
+            'La plantilla Harvard College Bullet Point Resume ha sido diseñada por expertos en la Universidad de Harvard, una de las instituciones educativas más prestigiosas del mundo. Está específicamente creada para destacar lo mejor de tu experiencia, habilidades y logros de manera clara y concisa, cumpliendo con las expectativas más altas de los empleadores.',
+          subtitle2: 'Claridad y organización',
+          answer2:
+            'Este formato se centra en la claridad y la organización de la información. Los puntos clave de tu experiencia laboral y habilidades están presentados en formato de viñetas, lo que facilita a los reclutadores y empleadores identificar rápidamente tus cualidades más importantes. Esta estructura es especialmente útil para aquellos con experiencia diversa que necesitan mostrar su valor de manera directa y efectiva.',
+          subtitle3: 'Enfocado en logros',
+          answer3:
+            'La plantilla enfatiza tus logros en cada posición que has ocupado, más que en las tareas cotidianas. Este enfoque orientado a resultados es crucial en procesos de selección competitivos, donde destacar tus logros puede ser la diferencia entre ser contratado o no.',
+        },
+        secondQ: {
+          title: 'Ventajas de usar la plantilla',
+          subtitle1: 'Profesionalismo y simplicidad',
+          answer1:
+            'La plantilla combina un diseño limpio y profesional con un enfoque simplificado, permitiendo que tu información se presente de manera efectiva sin distracciones innecesarias. Es ideal tanto para quienes tienen amplia experiencia como para aquellos que recién comienzan su carrera y necesitan destacar habilidades y logros clave.',
+          subtitle2: 'Adaptabilidad',
+          answer2:
+            'Aunque está basada en un diseño probado, esta plantilla es lo suficientemente flexible como para ser personalizada según las necesidades de diferentes industrias y niveles de experiencia. Puedes adaptarla fácilmente para ajustarse a posiciones en tecnología, finanzas, marketing, educación, y más.',
+          subtitle3: 'Eficiencia en el proceso de contratación',
+          answer3:
+            'Dado que muchos empleadores están familiarizados con este formato, su uso puede agilizar el proceso de selección. La estructura estandarizada facilita la revisión rápida y la comparación de candidatos, lo que puede darte una ventaja competitiva.',
+        },
+        thirdQ: {
+          title: '¿Cuándo deberías usar esta plantilla?',
+          subtitle1: 'Aplicaciones en industrias tradicionales',
+          answer1:
+            'Este formato es especialmente adecuado para industrias como finanzas, consultoría, y derecho, donde se valora la claridad, la concisión y un enfoque orientado a los logros. Si estás aplicando a roles en estos sectores, esta plantilla puede ayudarte a destacar.',
+          subtitle2: 'Procesos de selección altamente competitivos',
+          answer2:
+            'En situaciones donde te enfrentas a una competencia intensa por un puesto, el uso de un CV bien estructurado y enfocado en logros específicos puede ser un factor decisivo. Esta plantilla está diseñada para resaltar tu potencial en esos contextos.',
+          subtitle3: 'Si necesitas destacar logros específicos',
+          answer3:
+            'Si tu experiencia incluye logros destacados que te diferencian de otros candidatos, este formato es ideal. Te permite enfocar la atención en esos logros sin perder la claridad en la presentación general de tu CV.',
+        },
       },
     },
   },

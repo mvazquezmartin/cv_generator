@@ -3,8 +3,8 @@ import { DragDropContext, Draggable, Droppable } from '@hello-pangea/dnd';
 import { useTranslation } from 'react-i18next';
 import { CVContext } from '@/context/CVContext';
 import { SVG_delete, SVG_moveIcon, SVG_plus } from '@/assets/svg';
-import { EditableField } from '@/pages/CreateCV/BuildCV/EditableField/EditableField';
-import { handleDragEnd } from '@/pages/CreateCV/BuildCV/utils/dragEnd';
+import { EditableField } from '@/pages/CreateCV/EditableField/EditableField';
+import { handleDragEnd } from '@/pages/CreateCV/utils/dragEnd';
 
 export const SkillsSection = ({ cvData }) => {
   const { setCvData, addSkill, removeSkill } = useContext(CVContext);

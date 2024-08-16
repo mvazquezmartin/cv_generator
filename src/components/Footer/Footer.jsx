@@ -1,13 +1,25 @@
 import { useTranslation } from 'react-i18next';
 import { SVG_githubIcon } from '@/assets/svg';
 import './footer.css';
+import { useNavigate } from 'react-router-dom';
 
-export const Footer = () => {
+export const Footer = ({ showBg = true }) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleNavigate = () => {
+    navigate('/faq');
+  };
   return (
     <footer>
-      <div className="bg-absolute"></div>
-      <div></div>
+      {showBg && (
+        <>
+          <div className="bg-absolute"></div>
+          <div className="faq" onClick={handleNavigate}>
+            {t('FAQ.firstQ.title')}
+          </div>
+        </>
+      )}
       <div className="footerby">
         <p>
           {t('footer.by')}
@@ -16,7 +28,10 @@ export const Footer = () => {
           </a>
         </p>
         <div className="github-container">
-          <a href="https://github.com/mvazquezmartin/cv_generator" target='_blank'>
+          <a
+            href="https://github.com/mvazquezmartin/cv_generator"
+            target="_blank"
+          >
             <SVG_githubIcon />
           </a>
         </div>

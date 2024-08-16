@@ -1,5 +1,5 @@
 import { CVContext } from '@/context/CVContext';
-import { EditableField } from '@/pages/CreateCV/BuildCV/EditableField/EditableField';
+import { EditableField } from '@/pages/CreateCV/EditableField/EditableField';
 import { useContext } from 'react';
 
 export const DescriptionSection = ({ cvData }) => {
