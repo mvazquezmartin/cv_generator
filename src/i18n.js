@@ -21,7 +21,6 @@ const resources = {
       },
       cv: {
         experience: 'PROFESSIONAL EXPERIENCE',
-
         education: 'EDUCATION',
         skills: 'ADDITIONAL SKILLS',
       },
@@ -69,7 +68,7 @@ const resources = {
           },
           {
             id: uuidv4(),
-            company: 'Otra empresa',
+            company: 'Another company',
             location: 'Rosario, Argentina',
             position: 'FullStack Developer',
             startDate: 'August 2017',
@@ -82,7 +81,7 @@ const resources = {
           },
           {
             id: uuidv4(),
-            company: 'Otra empresa',
+            company: 'Another company',
             location: 'Rosario, Argentina',
             position: 'FrontEnd Developer',
             startDate: 'January 2015',
