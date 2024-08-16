@@ -266,6 +266,25 @@ const SVG_logo = () => {
   );
 };
 
+const SVG_delete_field = () => {
+  return (
+    <svg      
+      width="24"
+      height="24"
+      stroke="currentColor"
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="2"
+      viewBox="0 0 24 24"
+      data-icon="SvgDelete"
+      aria-hidden="true"
+    >
+      <path d="M14 12l2.71 2.71m-5.42-5.42L14 12m2.71-2.71L14 12l-2.71 2.71M18 4.978H9.079L3 12.167l6.079 6.855H18a3 3 0 003-3V7.978a3 3 0 00-3-3z"></path>
+    </svg>
+  );
+};
+
 const SVG_reset = () => {
   return (
     <svg
@@ -296,4 +315,5 @@ export {
   SVG_plus,
   SVG_logo,
   SVG_reset,
+  SVG_delete_field
 };
