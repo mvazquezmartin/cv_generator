@@ -13,7 +13,6 @@
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    /* row-gap: 1rem; */
     width: 100%;
     border: 1px dashed #cb67e4;
     padding: 1rem 2rem;
@@ -23,17 +22,17 @@
       display: block;
       border-bottom: 1px solid #262626;
       padding-bottom: 10px;
-      font-size: 2em;            
+      font-size: 2rem;
       margin-inline-start: 0px;
       margin-inline-end: 0px;
       font-weight: bold;
       unicode-bidi: isolate;
-      width: 100%;      
+      width: 100%;
     }
 
     .faq-subtitle {
       margin-top: 1rem;
-      color: #262626;
+      color: #222222;
     }
     p {
       font-weight: 600;
@@ -62,6 +61,26 @@
 
       &:active {
         background-color: #944baf;
+      }
+    }
+  }
+  @media (width <= 600px) {
+    & {
+      padding: 1rem 5px;
+      .faq-section {
+        padding: 1rem;
+        .faq-title {
+          font-size: 1.8rem;
+        }
+        p {
+          font-weight: 400;
+        }
+      }
+
+      .home-action-btn {
+        .btn-start {
+          margin: 1rem 0;
+        }
       }
     }
   }

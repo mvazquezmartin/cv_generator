@@ -3,9 +3,9 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  row-gap: 1rem;
+  row-gap: 5rem;
   background: #262626;
-  height: 25dvh;
+  height: 30dvh;
   color: #e1e1e1;
   position: relative;
 
@@ -68,7 +68,12 @@ footer {
     & {
       .bg-absolute {
         height: 200px;
-        bottom: 190px;
+        bottom: 240px;
+      }
+      .faq{
+        margin: 0 1rem;
+        font-size: 1rem;
+        text-align: center;
       }
     }
   }
