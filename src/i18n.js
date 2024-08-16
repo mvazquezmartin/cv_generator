@@ -26,9 +26,9 @@ const resources = {
         skills: 'ADDITIONAL SKILLS',
       },
       cv_builder: {
-        defaultCompany: 'Company',
+        defaultCompany: 'Company or project name',
         defaultLocation: 'Location',
-        defaultPosition: 'Position',
+        defaultPosition: 'Position or project URL',
         defaultStartDate: 'Start Date',
         defaultEndDate: 'End Date',
         defaultTask1: '- Press Enter to create',
@@ -143,9 +143,9 @@ const resources = {
         skills: 'HABILIDADES ADICIONALES',
       },
       cv_builder: {
-        defaultCompany: 'Empresa',
+        defaultCompany: 'Empresa o nombre del proyecto',
         defaultLocation: 'Localidad',
-        defaultPosition: 'Puesto',
+        defaultPosition: 'Puesto o URL del proyecto',
         defaultStartDate: 'Fecha de inicio',
         defaultEndDate: 'Fecha final',
         defaultTask1: '- Presiona Enter para',
