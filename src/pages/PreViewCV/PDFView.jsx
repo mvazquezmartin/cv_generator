@@ -1,6 +1,6 @@
 import { PDFViewer } from '@react-pdf/renderer';
 import { useNavigate } from 'react-router-dom';
-import { PDFDocument } from '@/pages/CreateCV/CVDesign';
+import { PDFDocument } from '@/components/CVDesign/CVDesign';
 import { SVG_arrowBack } from '@/assets/svg';
 import './PDFView.css';
 

@@ -6,7 +6,7 @@ import {
   SVG_reset,
 } from '@/assets/svg';
 import { useTranslation } from 'react-i18next';
-import { PDFDocument } from '@/pages/CreateCV/CVDesign';
+import { PDFDocument } from '@/components/CVDesign/CVDesign';
 import { PDFDownloadLink } from '@react-pdf/renderer';
 import { useNavigate } from 'react-router-dom';
 import './header.css';
