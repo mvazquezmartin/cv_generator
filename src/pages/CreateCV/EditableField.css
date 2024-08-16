@@ -22,8 +22,8 @@
       }
       .editable-field-delete {
         position: absolute;
-        top: -6px;
-        right: 18px;
+        top: 0;
+        right: 25px;
         opacity: 0.2;
         align-self: end;
         display: flex;
@@ -32,8 +32,7 @@
         height: 35px;
         width: 30px;
         background-color: #e74c3c;
-        margin: 0.5rem;
-        /* padding: 0.5rem; */
+        margin: 1px 0;
         color: white;
         border: none;
         border-radius: 6px;
