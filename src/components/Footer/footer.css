@@ -11,13 +11,14 @@ footer {
 
   .bg-absolute {
     position: absolute;
-    height: 25dvh;
+    height: 460px;
     background: #262626;
-    top: -25dvh;
+    bottom: 230px;
     width: 100%;
   }
 
   .footerby {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -44,6 +45,14 @@ footer {
         &:hover {
           color: #cb67e4;
         }
+      }
+    }
+  }
+  @media (width <= 600px){
+    &{
+      .bg-absolute{
+        height: 200px;
+        bottom: 190px;
       }
     }
   }

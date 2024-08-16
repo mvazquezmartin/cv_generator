@@ -16,7 +16,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      h1 {
+      h1 {        
         font-size: clamp(2rem, 3vw + 1rem, 3.75rem);
         /* font-size: 3.75rem; */
         line-height: 1;
@@ -68,7 +68,7 @@
       }
     }
     .screenshot-container {
-      margin-top: 3rem;
+      margin-top: 6rem;
       max-width: 1200px;
       img {
         position: relative;
@@ -81,6 +81,14 @@
   }
   @media only screen and (max-width: 600px) {
     &{
+      main{
+        .home-title{
+          p{
+            padding: 0 10px;
+            margin-bottom: 1rem;
+          }
+        }
+      }
       .screenshot-container{
         padding: 0 10px;
       }
