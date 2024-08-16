@@ -112,6 +112,10 @@ export const PDFDocument = ({
     return url;
   };
 
+  const isValidUrl = (string) => {
+    return !string.includes(' ') && string.includes('.');
+  };
+
   return (
     <Document>
       <Page size="A4" style={styles.page}>
@@ -139,7 +143,11 @@ export const PDFDocument = ({
                 <Text>{exp.location}</Text>
               </View>
               <View style={styles.titleDate}>
-                <Text>{exp.position}</Text>
+                {isValidUrl(exp.position) ? (
+                  <Link src={formatUrl(exp.position)}>{exp.position}</Link>
+                ) : (
+                  <Text>{exp.position}</Text>
+                )}
                 <Text style={styles.italic}>
                   {exp.startDate} - {exp.endDate}
                 </Text>
