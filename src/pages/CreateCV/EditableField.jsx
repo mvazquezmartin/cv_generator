@@ -1,5 +1,6 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useContext } from 'react';
 import { SVG_delete } from '@/assets/svg';
+import { CVContext } from '@/context/CVContext';
 import './EditableField.css';
 
 export const EditableField = ({
@@ -7,11 +8,13 @@ export const EditableField = ({
   onChange,
   onEnter,
   btn_delete = false,
+  experienceIndex,
+  taskIndex,
 }) => {
+  const { removeTask } = useContext(CVContext);
   const [editing, setEditing] = useState(false);
   const inputRef = useRef(null);
 
-  // Ajusta la altura del textarea
   const adjustHeight = (element) => {
     element.style.height = 'auto';
     element.style.height = `${element.scrollHeight}px`;
@@ -23,7 +26,6 @@ export const EditableField = ({
     }
   }, [editing, value]);
 
-  // Maneja la tecla Enter para finalizar la edición
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       setEditing(false);
@@ -33,27 +35,19 @@ export const EditableField = ({
     }
   };
 
-  // Maneja el cambio de valor
   const handleChange = (e) => {
     onChange(e.target.value);
     adjustHeight(e.target);
   };
 
-  // Maneja la salida del campo editable
   const handleBlur = () => {
     setEditing(false);
   };
 
-  // Maneja el clic en el botón de eliminar
   const handleDelete = (e) => {
     e.stopPropagation();
-    onChange('');
+    removeTask(experienceIndex, taskIndex);
   };
-  // const handleDeleteMouseDown = (e) => {
-  //   e.preventDefault();
-  //   console.log('test');
-  //   handleDelete(e);
-  // };
 
   return (
     <div className="editable-field-container">
@@ -84,7 +78,7 @@ export const EditableField = ({
             className="editable-field-span"
             onClick={() => setEditing(true)}
           >
-            {value || ' '} {/* Muestra un espacio si el valor está vacío */}
+            {value || ' '}
           </span>
         )}
       </div>

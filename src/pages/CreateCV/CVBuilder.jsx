@@ -1,5 +1,4 @@
 import { Fragment, useContext } from 'react';
-import { v4 as uuidv4 } from 'uuid';
 import { useTranslation } from 'react-i18next';
 import { DragDropContext, Droppable, Draggable } from '@hello-pangea/dnd';
 import { CVContext } from '@/context/CVContext';
@@ -9,7 +8,18 @@ import { SVG_moveIcon, SVG_delete, SVG_plus } from '@/assets/svg';
 import './CVBuilder.css';
 
 export const CVBuilder = () => {
-  const { cvData, setCvData } = useContext(CVContext);
+  const {
+    cvData,
+    setCvData,
+    handleContactChange,
+    addExperience,
+    removeExperience,
+    addTask,
+    addEducation,
+    removeEducation,
+    addSkill,
+    removeSkill,
+  } = useContext(CVContext);
   const { t } = useTranslation();
 
   const onDragEnd = (result) => {
@@ -28,54 +38,6 @@ export const CVBuilder = () => {
     }));
   };
 
-  const handleContactChange = (field, value) => {
-    setCvData((prevData) => ({
-      ...prevData,
-      contact: {
-        ...prevData.contact,
-        [field]: value,
-      },
-    }));
-  };
-
-  const addExperience = () => {
-    setCvData((prevData) => ({
-      ...prevData,
-      experiences: [
-        ...prevData.experiences,
-        {
-          id: uuidv4(),
-          company: t('cv_builder.defaultCompany'),
-          location: t('cv_builder.defaultLocation'),
-          position: t('cv_builder.defaultPosition'),
-          startDate: t('cv_builder.defaultStartDate'),
-          endDate: t('cv_builder.defaultEndDate'),
-          tasks: [t('cv_builder.defaultTask1'), t('cv_builder.defaultTask2')],
-        },
-      ],
-    }));
-  };
-
-  const removeExperience = (id) => {
-    setCvData((prevData) => ({
-      ...prevData,
-      experiences: prevData.experiences.filter(
-        (experience) => experience.id !== id
-      ),
-    }));
-  };
-
-  const addTask = (experienceIndex) => {
-    setCvData((prevData) => {
-      const newExperiences = [...prevData.experiences];
-      newExperiences[experienceIndex].tasks.push('- ');
-      return {
-        ...prevData,
-        experiences: newExperiences,
-      };
-    });
-  };
-
   const onEducationDragEnd = (result) => {
     if (!result.destination) return;
 
@@ -89,29 +51,6 @@ export const CVBuilder = () => {
     }));
   };
 
-  const addEducation = () => {
-    setCvData((prevData) => ({
-      ...prevData,
-      education: [
-        ...prevData.education,
-        {
-          id: uuidv4(),
-          institution: t('cv_builder.defaultInstitution'),
-          location: t('cv_builder.defaultEducationLocation'),
-          title: t('cv_builder.defaultTitle'),
-          date: t('cv_builder.defaultDate'),
-        },
-      ],
-    }));
-  };
-
-  const removeEducation = (id) => {
-    setCvData((prevData) => ({
-      ...prevData,
-      education: prevData.education.filter((education) => education.id !== id),
-    }));
-  };
-
   const onSkillsDragEnd = (result) => {
     if (!result.destination) return;
 
@@ -122,20 +61,6 @@ export const CVBuilder = () => {
     setCvData((prevData) => ({
       ...prevData,
       skills: reorderedSkills,
-    }));
-  };
-
-  const addSkill = () => {
-    setCvData((prevData) => ({
-      ...prevData,
-      skills: [...prevData.skills, t('cv_builder.defaultSkill')],
-    }));
-  };
-
-  const removeSkill = (index) => {
-    setCvData((prevData) => ({
-      ...prevData,
-      skills: prevData.skills.filter((_, skillIndex) => skillIndex !== index),
     }));
   };
 
@@ -288,29 +213,29 @@ export const CVBuilder = () => {
                               />
                             </div>
                             <div className="experience-task">
-                              {experience.tasks
-                                .filter((task) => task.trim() !== '')
-                                .map((task, taskIndex) => (
-                                  <EditableField
-                                    key={taskIndex}
-                                    value={task}
-                                    btn_delete={true}
-                                    onChange={(newTask) => {
-                                      setCvData((prevData) => {
-                                        const newExperiences = [
-                                          ...prevData.experiences,
-                                        ];
-                                        newExperiences[index].tasks[taskIndex] =
-                                          newTask;
-                                        return {
-                                          ...prevData,
-                                          experiences: newExperiences,
-                                        };
-                                      });
-                                    }}
-                                    onEnter={() => addTask(index)}
-                                  />
-                                ))}
+                              {experience.tasks.map((task, taskIndex) => (
+                                <EditableField
+                                  key={taskIndex}
+                                  value={task}
+                                  btn_delete={true}
+                                  experienceIndex={index}
+                                  taskIndex={taskIndex}
+                                  onChange={(newTask) => {
+                                    setCvData((prevData) => {
+                                      const newExperiences = [
+                                        ...prevData.experiences,
+                                      ];
+                                      newExperiences[index].tasks[taskIndex] =
+                                        newTask;
+                                      return {
+                                        ...prevData,
+                                        experiences: newExperiences,
+                                      };
+                                    });
+                                  }}
+                                  onEnter={() => addTask(index)}
+                                />
+                              ))}
                             </div>
                             <button
                               onClick={() => removeExperience(experience.id)}
