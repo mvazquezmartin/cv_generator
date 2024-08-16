@@ -81,12 +81,12 @@ const styles = StyleSheet.create({
     fontStyle: 'italic',
   },
   tasks: {
-    // marginLeft: 10,
     fontSize: 10.5,
     display: 'list-item',
     listStyleType: 'none',
     paddingLeft: 15,
-    // textIndent: '-20',
+    marginTop: 5,
+    textIndent: 0,
   },
   task: {
     paddingRight: 8,
