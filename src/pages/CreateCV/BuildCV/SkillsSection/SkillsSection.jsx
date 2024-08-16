@@ -5,10 +5,9 @@ import { CVContext } from '@/context/CVContext';
 import { SVG_delete, SVG_moveIcon, SVG_plus } from '@/assets/svg';
 import { EditableField } from '@/pages/CreateCV/BuildCV/EditableField/EditableField';
 import { handleDragEnd } from '@/pages/CreateCV/BuildCV/utils/dragEnd';
-import { handleFieldChange } from '@/pages/CreateCV/BuildCV/utils/handleChange';
 
 export const SkillsSection = ({ cvData }) => {
-  const { setCvData, addSkill } = useContext(CVContext);
+  const { setCvData, addSkill, removeSkill } = useContext(CVContext);
   const { t } = useTranslation();
 
   return (
