@@ -13,7 +13,18 @@ export const CVProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    localStorage.setItem('cvData', JSON.stringify(cvData));
+    const cleanUpEmptyTasks = (data) => {
+      return {
+        ...data,
+        experiences: data.experiences.map((experience) => ({
+          ...experience,
+          tasks: experience.tasks.filter((task) => task.trim() !== ''),
+        })),
+      };
+    };
+
+    const cleanedData = cleanUpEmptyTasks(cvData);
+    localStorage.setItem('cvData', JSON.stringify(cleanedData));
   }, [cvData]);
 
   useEffect(() => {

@@ -294,6 +294,7 @@ export const CVBuilder = () => {
                                   <EditableField
                                     key={taskIndex}
                                     value={task}
+                                    btn_delete={true}
                                     onChange={(newTask) => {
                                       setCvData((prevData) => {
                                         const newExperiences = [
