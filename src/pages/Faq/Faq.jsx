@@ -1,8 +1,8 @@
 import { Footer } from '@/components/Footer/Footer';
 import { Header } from '@/components/Header/Header';
 import { useTranslation } from 'react-i18next';
-import './Faq.css';
 import { BtnStart } from '@/pages/Home/BtnStart';
+import './Faq.css';
 
 export const Faq = () => {
   const { t } = useTranslation();
@@ -21,7 +21,7 @@ export const Faq = () => {
         </div>
 
         <div className="faq-section">
-          <h1 className="faq-title">{t('FAQ.secondQ.title')}</h1>
+          <h2 className="faq-title">{t('FAQ.secondQ.title')}</h2>
           <h2 className="faq-subtitle">{t('FAQ.secondQ.subtitle1')}</h2>
           <p>{t('FAQ.secondQ.answer1')}</p>
           <h2 className="faq-subtitle">{t('FAQ.secondQ.subtitle2')}</h2>
@@ -31,7 +31,7 @@ export const Faq = () => {
         </div>
 
         <div className="faq-section">
-          <h1 className="faq-title">{t('FAQ.thirdQ.title')}</h1>
+          <h2 className="faq-title">{t('FAQ.thirdQ.title')}</h2>
           <h2 className="faq-subtitle">{t('FAQ.thirdQ.subtitle1')}</h2>
           <p>{t('FAQ.thirdQ.answer1')}</p>
           <h2 className="faq-subtitle">{t('FAQ.thirdQ.subtitle2')}</h2>
