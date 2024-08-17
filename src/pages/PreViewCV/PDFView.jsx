@@ -4,7 +4,7 @@ import { PDFDocument } from '@/components/CVDesign/CVDesign';
 import { SVG_arrowBack } from '@/assets/svg';
 import './PDFView.css';
 
-const PDFPreview = () => {
+export const PDFPreview = () => {
   const navigate = useNavigate();
   const documentData = JSON.parse(localStorage.getItem('cvData')) || {};
 
@@ -35,4 +35,4 @@ const PDFPreview = () => {
   );
 };
 
-export default PDFPreview;
+
