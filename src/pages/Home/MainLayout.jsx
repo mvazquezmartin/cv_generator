@@ -1,10 +1,9 @@
 import { useTranslation } from 'react-i18next';
 import { Footer } from '@/components/Footer/Footer';
 import { Header } from '@/components/Header/Header';
-import { useNavigate } from 'react-router-dom';
 import screenshot from '/Screenshot.png';
-import './mainLayout.css';
 import { BtnStart } from '@/pages/Home/BtnStart';
+import './mainLayout.css';
 
 export const MainLayout = () => {
   const { t } = useTranslation();
@@ -21,11 +20,6 @@ export const MainLayout = () => {
             </h1>
             <p>{t('home.description')}</p>
           </div>
-          {/* <div className="home-action-btn">
-            <button className="btn-start" onClick={handleNavigate}>
-              {t('home.button')}
-            </button>
-          </div> */}
           <BtnStart />
           <div className="screenshot-container">
             <img src={screenshot} alt="screenshot from website" />
