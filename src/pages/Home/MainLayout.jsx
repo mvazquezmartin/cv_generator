@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { Footer } from '@/components/Footer/Footer';
 import { Header } from '@/components/Header/Header';
 import screenshot from '/Screenshot.png';
-import { BtnStart } from '@/pages/Home/BtnStart';
+import { BtnStart } from '@/components/BtnStart/BtnStart';
 import './mainLayout.css';
 
 export const MainLayout = () => {
