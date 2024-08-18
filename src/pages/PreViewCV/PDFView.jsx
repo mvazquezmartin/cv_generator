@@ -8,10 +8,6 @@ export const PDFPreview = () => {
   const navigate = useNavigate();
   const documentData = JSON.parse(localStorage.getItem('cvData')) || {};
 
-  if (!documentData) {
-    return <div>No hay datos para mostrar.</div>;
-  }
-
   const handleBackClick = () => {
     navigate(-1);
   };
@@ -34,5 +30,3 @@ export const PDFPreview = () => {
     </div>
   );
 };
-
-
