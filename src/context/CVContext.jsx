@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { v4 as uuidv4 } from 'uuid';
+
 export const CVContext = createContext();
 
 export const CVProvider = ({ children }) => {
@@ -40,6 +41,13 @@ export const CVProvider = ({ children }) => {
     localStorage.setItem('cvData', JSON.stringify(defaultData));
   };
 
+  const handleNameChange = (field, value) => {
+    setCvData((prevData) => ({
+      ...prevData,
+      [field]: value,
+    }));
+  };
+
   const handleContactChange = (field, value) => {
     setCvData((prevData) => ({
       ...prevData,
@@ -47,6 +55,13 @@ export const CVProvider = ({ children }) => {
         ...prevData.contact,
         [field]: value,
       },
+    }));
+  };
+
+  const handleDescriptionChange = (description) => {
+    setCvData((prevData) => ({
+      ...prevData,
+      description,
     }));
   };
 
@@ -142,7 +157,9 @@ export const CVProvider = ({ children }) => {
     cvData,
     setCvData,
     resetCvData,
+    handleNameChange,
     handleContactChange,
+    handleDescriptionChange,
     addExperience,
     removeExperience,
     addTask,
