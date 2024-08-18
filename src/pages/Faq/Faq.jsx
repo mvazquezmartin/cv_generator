@@ -1,7 +1,7 @@
 import { Footer } from '@/components/Footer/Footer';
 import { Header } from '@/components/Header/Header';
 import { useTranslation } from 'react-i18next';
-import { BtnStart } from '@/pages/Home/BtnStart';
+import { BtnStart } from '@/components/BtnStart/BtnStart';
 import './Faq.css';
 
 export const Faq = () => {
