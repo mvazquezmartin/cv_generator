@@ -3,18 +3,17 @@ import { EditableField } from '@/pages/CreateCV/EditableField/EditableField';
 import { useContext } from 'react';
 
 export const NameSection = ({ cvData }) => {
-  const { setCvData } = useContext(CVContext);
+  const { handleNameChange } = useContext(CVContext);
+
   return (
     <div className="title-name">
       <EditableField
         value={cvData.name}
-        onChange={(name) => setCvData((prevData) => ({ ...prevData, name }))}
+        onChange={(name) => handleNameChange('name', name)}
       />
       <EditableField
         value={cvData.position}
-        onChange={(position) =>
-          setCvData((prevData) => ({ ...prevData, position }))
-        }
+        onChange={(position) => handleNameChange('position', position)}
       />
     </div>
   );
