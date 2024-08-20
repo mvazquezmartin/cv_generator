@@ -24,7 +24,7 @@ export const Header = ({ showBtn, cvData, fixed }) => {
     <header className={fixed ? 'header-fixed' : ''}>
       <div className="header-flex">
         <div className="logo-header">
-          <a href="/">
+          <a href="/" aria-label="index">
             <SVG_logo />
           </a>
         </div>
@@ -33,11 +33,19 @@ export const Header = ({ showBtn, cvData, fixed }) => {
             <LanguageHandler />
           ) : (
             <div className="btn-header-container">
-              <button onClick={resetCvData} className="btn-reset">
+              <button
+                onClick={resetCvData}
+                className="btn-reset"
+                aria-label={t('header.reset')}
+              >
                 <SVG_reset />
                 {t('header.reset')}
               </button>
-              <button onClick={handlePreviewClick} className="btn-preview">
+              <button
+                onClick={handlePreviewClick}
+                className="btn-preview"
+                aria-label={t('header.preview')}
+              >
                 <SVG_preview /> {t('header.preview')}
               </button>
               <PDFDownloadLink
@@ -53,7 +61,10 @@ export const Header = ({ showBtn, cvData, fixed }) => {
                 }
                 fileName={`cv_${cvData.name.split(' ').join('_')}.pdf`}
               >
-                <button className="btn-download">
+                <button
+                  className="btn-download"
+                  aria-label={t('header.btnDownload')}
+                >
                   <SVG_downloadIcon />
                   {t('header.btnDownload')}
                 </button>

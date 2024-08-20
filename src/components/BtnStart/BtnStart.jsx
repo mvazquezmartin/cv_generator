@@ -9,7 +9,11 @@ export const BtnStart = () => {
   };
   return (
     <div className="home-action-btn">
-      <button className="btn-start" onClick={handleNavigate}>
+      <button
+        className="btn-start"
+        onClick={handleNavigate}
+        aria-label={t('home.button')}
+      >
         {t('home.button')}
       </button>
     </div>

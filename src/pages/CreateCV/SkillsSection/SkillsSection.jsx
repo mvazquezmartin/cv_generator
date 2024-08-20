@@ -37,7 +37,7 @@ export const SkillsSection = ({ cvData }) => {
                       {...provided.draggableProps}
                       className="skill-card"
                     >
-                      <div {...provided.dragHandleProps} className="btn-move">
+                      <div {...provided.dragHandleProps} className="btn-move" aria-label='move button'>
                         <SVG_moveIcon />
                       </div>
                       <EditableField
@@ -56,6 +56,7 @@ export const SkillsSection = ({ cvData }) => {
                       <button
                         onClick={() => removeSkill(index)}
                         className="btn-delete"
+                        aria-label="delete button"
                       >
                         <SVG_delete />
                       </button>
@@ -68,7 +69,7 @@ export const SkillsSection = ({ cvData }) => {
           )}
         </Droppable>
       </DragDropContext>
-      <button onClick={addSkill} className="btn-add">
+      <button onClick={addSkill} className="btn-add" aria-label="add button">
         <SVG_plus />
       </button>
     </div>

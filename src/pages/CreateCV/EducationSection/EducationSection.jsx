@@ -38,7 +38,11 @@ export const EducationSection = ({ cvData }) => {
                       {...provided.draggableProps}
                       className="education-card"
                     >
-                      <div {...provided.dragHandleProps} className="btn-move">
+                      <div
+                        {...provided.dragHandleProps}
+                        className="btn-move"
+                        aria-label="move button"
+                      >
                         <SVG_moveIcon />
                       </div>
                       <div className="education-header">
@@ -96,6 +100,7 @@ export const EducationSection = ({ cvData }) => {
                       <button
                         onClick={() => removeEducation(education.id)}
                         className="btn-delete"
+                        aria-label="delete button"
                       >
                         <SVG_delete />
                       </button>
@@ -108,7 +113,11 @@ export const EducationSection = ({ cvData }) => {
           )}
         </Droppable>
       </DragDropContext>
-      <button onClick={addEducation} className="btn-add">
+      <button
+        onClick={addEducation}
+        className="btn-add"
+        aria-label="add button"
+      >
         <SVG_plus />
       </button>
     </div>

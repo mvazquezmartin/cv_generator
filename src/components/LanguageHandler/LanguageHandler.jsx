@@ -15,15 +15,15 @@ export const LanguageHandler = () => {
 
   return (
     <div className="language-handler">
-      <button className="dropdown-toggle">
+      <button className="dropdown-toggle" aria-label={i18n.language}>
         {i18n.language === 'en' ? <SVG_USAFlag /> : <SVG_ArgentinaFlag />}
       </button>
       <div className="dropdown-menu">
-        <button onClick={() => changeLanguage('en')}>
+        <button onClick={() => changeLanguage('en')} aria-label="ENG">
           <SVG_USAFlag />
           ENG
         </button>
-        <button onClick={() => changeLanguage('es')}>
+        <button onClick={() => changeLanguage('es')} aria-label="ESP">
           <SVG_ArgentinaFlag />
           ESP
         </button>
