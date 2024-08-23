@@ -14,6 +14,7 @@
     align-items: start;
     justify-content: center;
     width: 100%;
+    max-width: 1000px;
     border: 1px dashed #cb67e4;
     padding: 1rem 2rem;
     background: #e1e1e1;
