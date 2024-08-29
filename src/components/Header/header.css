@@ -30,7 +30,7 @@ header {
       justify-content: center;
       align-items: center;
       height: 50px;
-      filter: drop-shadow(3px 2px 5px #ea00ff9f);
+      /* filter: drop-shadow(3px 2px 5px #ea00ff9f); */
     }
 
     .language-download {
